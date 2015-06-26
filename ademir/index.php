@@ -2,14 +2,14 @@
 
 date_default_timezone_set("America/Sao_Paulo");
 
-$pasta = "dados/";
+$pasta = "../dados/";
 
 $arquivos = glob($pasta . "*");
 usort($arquivos, function($a, $b) {
     return filectime($a) < filectime($b);
 });
 
-$final = "";
+$edits = "";
 
 foreach ($arquivos as $file) {
     $bas = basename($file);
@@ -20,11 +20,11 @@ foreach ($arquivos as $file) {
     $titulo = htmlspecialchars(trim($arquivo[0]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $final .= "<a href=\"resumo.php?f=$bas\">$titulo, por $autoria</a><br>";
+    $edits .= "<a href=\"edita.php?f=$bas\">$titulo, por $autoria</a><br>";
 }
 
-if ($final == "")
-    $final = "Nenhum resumo disponível agora...";
+if ($edits == "")
+    $edits = "Nenhum resumo disponível agora...";
 
 ?>
 
@@ -39,14 +39,14 @@ if ($final == "")
     
     <body>
         <center>
-        <h1>Site dos Resumos</h1>
-        <small>
-            Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (1ª E)<br>
-        </small><br>
+        <h1>Site dos Resumos - Painel Administrativo</h1>
         <br>
-        Resumos disponíveis:<br>
+        <big><a href="cria.html">[Criar um resumo]</a><br></big>
         <br>
-        <?php echo $final; ?>
+        <br>
+        Editar um resumo:<br>
+        <br>
+        <?php echo $edits; ?>
         </center>
     </body>
 </html>
