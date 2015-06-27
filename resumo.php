@@ -24,7 +24,7 @@ function formatar($texto) {
     $nbspreg = "/^ +/";
     $nbsprep = "&nbsp;";
     $imgreg = "/\[imagem:([^\]]+)\]/";
-    $imgrep = "<img src='$1'>";
+    $imgrep = "<a target='_blank' href='$1'><img src='$1'></a>";
     $bireg = "/\[([bi]):([^\]]+)\]/";
     $birep = "<$1>$2</$1>";
 
