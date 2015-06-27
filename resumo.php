@@ -27,8 +27,8 @@ function formatar($texto) {
     $imgrep = "<a target='_blank' title='Clique para ver o tamanho completo.' href='$1'><img src='$1' ></a>";
     $bireg = "/\[([bi]):([^\]]+)\]/";
     $birep = "<$1>$2</$1>";
-    $h4reg = "/\[h4:([^\]]+)]/";
-    $h4rep = "<h4>$1</h4>";
+    $h4reg = "/\[big:([^\]]+)]/";
+    $h4rep = "<span class='big'>$1</span>";
 
     $texto = htmlspecialchars($texto);
     $texto = substituir_global($linkreg, $linkrep, $texto);

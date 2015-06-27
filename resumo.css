@@ -6,3 +6,9 @@ img {
     max-width: 33%;
     max-height: 500px;
 }
+
+.big {
+    font-size: 1.33em;
+    font-weight: bold;
+    margin: 10px;
+}
