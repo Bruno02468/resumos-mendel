@@ -1,3 +1,7 @@
 .conteudo {
     margin-left: 20px;
 }
+
+img {
+    max-width: 33%;
+}
