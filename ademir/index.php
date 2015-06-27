@@ -20,7 +20,7 @@ foreach ($arquivos as $file) {
     $titulo = htmlspecialchars(trim($arquivo[0]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $edits .= "<a href=\"edita.php?f=$bas\">$titulo, por $autoria</a><br>";
+    $edits .= "<a target='_blank' href=\"edita.php?f=$bas\">$titulo, por $autoria</a><br>&nbsp&nbsp&nbsp<a target='_blank' href=\"atuadores/deleta.php?f=$bas\">[Deletar]</a>";
 }
 
 if ($edits == "")
@@ -30,7 +30,7 @@ if ($edits == "")
 
 <html>
     <head>
-        <title>Resumos</title>
+        <title>Painel Administrativo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="/stylesheets/dark.css">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
