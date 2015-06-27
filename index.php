@@ -45,7 +45,9 @@ if ($final == "")
             <a href="ademir/">[Somente pessoal autorizado]</a>
         </small><br>
         <br>
+        <br>
         Resumos disponíveis:<br>
+        <br>
         <br>
         <?php echo $final; ?>
         </center>
