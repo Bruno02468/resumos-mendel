@@ -20,7 +20,7 @@ foreach ($arquivos as $file) {
     $titulo = htmlspecialchars(trim($arquivo[0]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $final .= "<a target='_blank' href=\"resumo.php?f=$bas\">\"<i>$titulo</i>\", por $autoria</a><br>";
+    $final .= "<a target='_blank' href=\"resumo.php?f=$bas\">\"<i>$titulo</i>\", por $autoria</a><br><br>";
 }
 
 if ($final == "")
