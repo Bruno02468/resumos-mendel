@@ -41,6 +41,7 @@ $conteudo = htmlspecialchars(implode("", $dadosarr));
         <br>
         <form action="atuadores/cria.php" method="POST">
             <input type="hidden" value="<?php echo $file; ?>" name="filename">
+            <input type="hidden" value="<?php echo $likes; ?>" name="likes">
             <table align="center">
                 <tr><td>Título: </td><td><input type="text" value="<?php echo $titulo; ?>" name="titulo"></tr>
                 <tr><td>Autoria: </td><td><input type="text" value="<?php echo $autoria; ?>" name="autoria"></tr>

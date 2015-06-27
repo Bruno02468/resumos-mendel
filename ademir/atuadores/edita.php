@@ -15,7 +15,7 @@ $filename = req('filename');
 $titulo = req('titulo');
 $autoria = req('autoria');
 $dados = req('dados');
-$likes = file("../../dados/" . $filename)[2];
+$likes = req("likes");
 
 
 $arquivo = "$titulo\n$autoria\n$likes\n$dados";
