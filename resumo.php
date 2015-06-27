@@ -11,7 +11,7 @@ function req($str) {
 }
 
 function substituir_global($padrao, $subst, $texto) {
-    while (preg_match_all($padrao, $texto))
+    while (preg_match($padrao, $texto))
         $texto = preg_replace($padrao, $subst, $texto);
     return $texto;
 }
