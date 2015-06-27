@@ -26,9 +26,9 @@ function formatar($texto) {
     $bireg = "/\[(\/[biu]|[biu])\]/";
     $birep = "<$1>";
     $h4reg = "/\[big\]/";
-    $h4rep = "<span class='big'>";
+    $h4rep = "<div class='big'>";
     $hcreg = "/\[\/big\]/";
-    $hcrep = "</span>";
+    $hcrep = "</div>";
     
 
     $texto = htmlspecialchars($texto);
