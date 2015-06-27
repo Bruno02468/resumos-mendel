@@ -17,9 +17,11 @@ if (!$arquivo)
 
 $titulo = htmlspecialchars(trim($arquivo[0]));
 $autoria = htmlspecialchars(trim($arquivo[1]));
+$likes = trim($arquivo[2]);
 $dadosarr = $arquivo;
 unset($dadosarr[0]);
 unset($dadosarr[1]);
+unset($dadosarr[2]);
 $conteudo = htmlspecialchars(implode("", $dadosarr));
 
 ?>

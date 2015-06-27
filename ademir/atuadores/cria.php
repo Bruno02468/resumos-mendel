@@ -13,7 +13,7 @@ function req($str) {
     }
 }
 
-$arquivo = "$titulo\n$autoria\n$dados";
+$arquivo = "$titulo\n$autoria\n0\n$dados";
 file_put_contents("../../dados/" . $filename, $arquivo);
 
 $host  = $_SERVER['HTTP_HOST'];
