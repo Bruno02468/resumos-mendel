@@ -18,25 +18,26 @@ function substituir_global($padrao, $subst, $texto) {
 
 function formatar($texto) {
     $linkreg = "/\[([^\]]+)\|([^\]]+)\]/";
-    $linkrep = "<a href='$1'>$2</a>";
-    $nlinkreg = "/\{([^\]]+)\|([^\]]+)\}/";
-    $nlinkrep = "<a target='_blank' href='$1'>$2</a>";
+    $linkrep = "<a target='_blank' href='$1'>$2</a>";
     $nbspreg = "/^ +/";
     $nbsprep = "&nbsp;";
     $imgreg = "/\[imagem:([^\]]+)\]/";
-    $imgrep = "<a target='_blank' title='Clique para ver o tamanho completo.' href='$1'><img src='$1' ></a>";
-    $bireg = "/\[([biu]):([^\]]+)\]/";
-    $birep = "<$1>$2</$1>";
-    $h4reg = "/\[big:([^\]]+)]/";
-    $h4rep = "<span class='big'>$1</span>";
+    $imgrep = "<a target='_blank' title='Clique para ver o tamanho completo.' href='$1'><img src='$1'></a>";
+    $bireg = "/\[(\/[biu]|[biu])\]/";
+    $birep = "<$1>";
+    $h4reg = "/\[big\]/";
+    $h4rep = "<span class='big'>";
+    $hcreg = "/\[\/big\]/";
+    $hcrep = "</span>";
+    
 
     $texto = htmlspecialchars($texto);
     $texto = substituir_global($linkreg, $linkrep, $texto);
-    $texto = substituir_global($nlinkreg, $nlinkrep, $texto);
     $texto = substituir_global($nbspreg, $nbsprep, $texto);
     $texto = substituir_global($imgreg, $imgrep, $texto);
     $texto = substituir_global($bireg, $birep, $texto);
     $texto = substituir_global($h4reg, $h4rep, $texto);
+    $texto = substituir_global($hcreg, $hcrep, $texto);
     
     return $texto;
 }
