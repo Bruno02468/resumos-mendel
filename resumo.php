@@ -102,6 +102,13 @@ $conteudo = formatar_array($dadosarr);
         <br>
         <br>
         <div class="conteudo"><?php echo $conteudo; ?></div>
+        <br>
+        <br>
+        <br>
+        <footer>
+            <small>Tudo programado por Bruno Borges Paschoalinoto.<br>
+            O conteúdo aqui foi criado por pessoas diversas.</small>
+        </footer>
         <script>
             filename = "<?php echo $file; ?>";
         </script>
