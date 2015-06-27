@@ -25,7 +25,7 @@ function formatar($texto) {
     $nbsprep = "&nbsp;";
     $imgreg = "/\[imagem:([^\]]+)\]/";
     $imgrep = "<a target='_blank' title='Clique para ver o tamanho completo.' href='$1'><img src='$1' ></a>";
-    $bireg = "/\[([bi]):([^\]]+)\]/";
+    $bireg = "/\[([biu]):([^\]]+)\]/";
     $birep = "<$1>$2</$1>";
     $h4reg = "/\[big:([^\]]+)]/";
     $h4rep = "<span class='big'>$1</span>";
