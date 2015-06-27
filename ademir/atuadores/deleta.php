@@ -10,7 +10,11 @@ function req($str) {
     }
 }
 
-$arquivo = "../../$filename";
+$arquivo = "../../dados/$filename";
 unlink($arquivo);
+
+$host  = $_SERVER['HTTP_HOST'];
+$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+header("Location: http://$host$uri/../");
 
 ?>
