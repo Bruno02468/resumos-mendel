@@ -39,7 +39,7 @@ $conteudo = htmlspecialchars(implode("", $dadosarr));
         <center>
         <h1>Site dos Resumos - Editando resumo "<?php echo $titulo; ?>"</h1>
         <br>
-        <form action="atuadores/cria.php" method="POST">
+        <form action="atuadores/edita.php" method="POST">
             <input type="hidden" value="<?php echo $file; ?>" name="filename">
             <input type="hidden" value="<?php echo $likes; ?>" name="likes">
             <table align="center">

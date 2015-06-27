@@ -92,9 +92,9 @@ $conteudo = formatar_array($dadosarr);
         Título do resumo: <b><?php echo $titulo; ?></b><br>
         <br>
         Escrito por: <b><?php echo $autoria; ?></b><br>
-        </h3>
         <br>
         <a href="javascript:void(0);" onclick="gostei();">Gostei desse resumo!</a> [<span id="likes"><?php echo $likes; ?></span>]<br>
+        </h3>
         <br>
         <br>
         <div class="conteudo"><?php echo $conteudo; ?></div>
