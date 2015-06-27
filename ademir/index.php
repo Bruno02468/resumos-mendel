@@ -20,7 +20,7 @@ foreach ($arquivos as $file) {
     $titulo = htmlspecialchars(trim($arquivo[0]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $edits .= "<a target='_blank' href=\"edita.php?f=$bas\">$titulo, por $autoria</a>&nbsp&nbsp&nbsp<a href=\"atuadores/deleta.php?f=$bas\">[Deletar]</a><br><br>";
+    $edits .= "<a target='_blank' href=\"edita.php?f=$bas\">\"<i>$titulo</i>\", por $autoria</a>&nbsp&nbsp&nbsp<a href=\"atuadores/deleta.php?f=$bas\">[Deletar]</a><br><br>";
 }
 
 if ($edits == "")
