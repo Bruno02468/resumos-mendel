@@ -11,6 +11,6 @@
         <center>
         <h1>Site dos Resumos - Sincronizar com o GitHub</h1>
         <br>
-        <?php echo exec("cd .. && git pull origin master"); ?>
+        <?php echo exec("cd .. && /home/bruno/gitpull.sh"); ?>
     </body>
 </html>
