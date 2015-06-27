@@ -42,6 +42,7 @@ if ($final == "")
         <h1>Site dos Resumos</h1>
         <small>
             Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (1ª E)<br>
+            <a href="ademir/">[Somente pessoal autorizado]</a>
         </small><br>
         <br>
         Resumos disponíveis:<br>

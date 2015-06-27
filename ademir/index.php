@@ -41,7 +41,10 @@ if ($edits == "")
         <center>
         <h1>Site dos Resumos - Painel Administrativo</h1>
         <br>
-        <big><a href="cria.html">[Criar um resumo]</a><br></big>
+        <big>
+            <a href="/resumos">[Página inicial]</a><br>
+            <a href="cria.html">[Criar um resumo]</a><br>
+        </big>
         <br>
         <br>
         Editar um resumo:<br>
