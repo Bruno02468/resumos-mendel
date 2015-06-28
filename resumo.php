@@ -17,11 +17,12 @@ function substituir_global($padrao, $subst, $texto) {
 }
 
 function formatar($texto) {
-    $linkreg = "/\[([^\]]+)\|([^\]]+)\]/";
+    $not_bracket = "[^\]]";
+    $linkreg = "/\[($not_bracket+)\|($not_bracket+)\]/";
     $linkrep = "<a target='_blank' href='$1'>$2</a>";
     $nbspreg = "/^ +/";
     $nbsprep = "&nbsp;";
-    $imgreg = "/\[imagem:([^\]]+)\]/";
+    $imgreg = "/\[imagem:($not_bracket+)\]/";
     $imgrep = "<a target='_blank' title='Clique para ver o tamanho completo.' href='$1'><img src='$1'></a>";
     $bireg = "/\[(\/[biu]|[biu])\]/";
     $birep = "<$1>";
@@ -29,7 +30,7 @@ function formatar($texto) {
     $h4rep = "<div class='big'>";
     $hcreg = "/\[\/big\]/";
     $hcrep = "</div>";
-    $colorreg = "/\[cor:(.+)\]/";
+    $colorreg = "/\[cor:($not_bracket+)\]/";
     $colorrep = "<span style='color: $1;'>";
     $endcolorreg = "/\[\/cor\]/";
     $endcolorrep = "</span>";
