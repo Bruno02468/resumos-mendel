@@ -29,6 +29,11 @@ function formatar($texto) {
     $h4rep = "<div class='big'>";
     $hcreg = "/\[\/big\]/";
     $hcrep = "</div>";
+    $colorreg = "/\[cor:(.+)\]/";
+    $colorrep = "<span style='color: $1;'>";
+    $endcolorreg = "/\[\/cor\]/";
+    $endcolorrep = "</span>";
+    
     
 
     $texto = htmlspecialchars($texto);
@@ -38,6 +43,8 @@ function formatar($texto) {
     $texto = substituir_global($bireg, $birep, $texto);
     $texto = substituir_global($h4reg, $h4rep, $texto);
     $texto = substituir_global($hcreg, $hcrep, $texto);
+    $texto = substituir_global($colorreg, $colorrep, $texto);
+    $texto = substituir_global($endcolorreg, $endcolorrep, $texto);
     
     return $texto;
 }
