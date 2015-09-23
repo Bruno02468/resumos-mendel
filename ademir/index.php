@@ -40,6 +40,7 @@ if ($edits == "")
     </head>
 
     <body>
+        <?php include("../analytics.php"); ?>
         <center>
         <h1>Site dos Resumos - Painel Administrativo</h1>
         <br>

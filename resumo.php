@@ -34,8 +34,8 @@ function formatar($texto) {
     $colorrep = "<span style='color: $1;'>";
     $endcolorreg = "/\[\/cor\]/";
     $endcolorrep = "</span>";
-
-
+    $sureg = "/\[((sub|sup)|(\/(sub|sup)))\]/";
+    $surep = "<$1>";
 
     $texto = htmlspecialchars($texto);
     $texto = substituir_global($linkreg, $linkrep, $texto);
@@ -46,6 +46,7 @@ function formatar($texto) {
     $texto = substituir_global($hcreg, $hcrep, $texto);
     $texto = substituir_global($colorreg, $colorrep, $texto);
     $texto = substituir_global($endcolorreg, $endcolorrep, $texto);
+    $texto = substituir_global($sureg, $surep, $texto);
 
     return $texto;
 }

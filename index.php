@@ -22,7 +22,7 @@ foreach ($arquivos as $file) {
     $titulo = htmlspecialchars(trim($arquivo[0]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $final .= "<a target='_blank' href=\"resumo/$bas\">\"<i>$titulo</i>\", por $autoria</a><br><br>";
+    $final .= "<span><a target='_blank' href=\"resumo/$bas\">\"<i>$titulo</i>\", por $autoria</a><br><br></span>";
 }
 
 if ($final == "")
@@ -49,10 +49,14 @@ if ($final == "")
         </small><br>
         <br>
         <br>
-        Resumos disponíveis:<br>
+        <!--Pesquisar: <input type="text" id="pesq" oninput="pesquisar(this.value)" style="width: 20%"><br>
+        <br>-->
+        <span id="msg">Todos os resumos:</span><br>
         <br>
-        <br>
-        <?php echo $final; ?>
+        <div id="resumos">
+            <?php echo $final; ?>
+        </div>
         </center>
+        <script src="index.js"></script>
     </body>
 </html>

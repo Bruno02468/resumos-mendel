@@ -116,3 +116,7 @@ footer {
     bottom: 0;
     left: 0;
 }
+
+sup, sub {
+    font-size: 0.66em;
+}
