@@ -1,5 +1,5 @@
 <?php
-    
+
 function req($str) {
     if (!isset($_POST[$str])) {
         die("Variável POST \"" . $str . "\" necessária para esta requisição.");
@@ -21,6 +21,6 @@ $likes = req("likes");
 $arquivo = "$titulo\n$autoria\n$likes\n$dados";
 file_put_contents("../../dados/" . $filename, $arquivo);
 
-header("Location: http://$host$uri/../../resumo.php?f=$filename");
+header("Location: http://$host$uri/../../resumo/$filename");
 
 ?>

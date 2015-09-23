@@ -9,5 +9,5 @@ function ajaxGet(url) {
 }
 
 function gostei() {
-    likespan.innerHTML = ajaxGet("/resumos/gostei.php?f=" + filename);
+    likespan.innerHTML = ajaxGet("../gostei.php?f=" + filename);
 }

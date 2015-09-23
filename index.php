@@ -6,7 +6,9 @@ $pasta = "dados/";
 
 $arquivos = glob($pasta . "*");
 usort($arquivos, function($a, $b) {
-    return filectime($a) < filectime($b);
+    $fa = file($a);
+    $fb = file($b);
+    return trim($fa[2]) < trim($fb[2]);
 });
 
 $final = "";
@@ -16,11 +18,11 @@ foreach ($arquivos as $file) {
     if ('.' === $bas) continue;
     if ('..' === $bas) continue;
     $arquivo = file($file);
-    
+
     $titulo = htmlspecialchars(trim($arquivo[0]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $final .= "<a target='_blank' href=\"resumo.php?f=$bas\">\"<i>$titulo</i>\", por $autoria</a><br><br>";
+    $final .= "<a target='_blank' href=\"resumo/$bas\">\"<i>$titulo</i>\", por $autoria</a><br><br>";
 }
 
 if ($final == "")
@@ -32,16 +34,17 @@ if ($final == "")
     <head>
         <title>Resumos</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="/stylesheets/dark.css">
+        <link rel="stylesheet" type="text/css" href="resumo.css">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
     </head>
-    
+
     <body>
+        <?php include("analytics.php"); ?>
         <center>
         <h1>Site dos Resumos</h1>
         <small>
-            Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (1ª E)<br>
+            Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (1º E)<br>
             <a href="ademir/">[Somente pessoal autorizado]</a>
         </small><br>
         <br>

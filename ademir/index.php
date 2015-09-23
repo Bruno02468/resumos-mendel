@@ -6,7 +6,9 @@ $pasta = "../dados/";
 
 $arquivos = glob($pasta . "*");
 usort($arquivos, function($a, $b) {
-    return filectime($a) < filectime($b);
+    $fa = file($a);
+    $fb = file($b);
+    return trim($fa[2]) < trim($fb[2]);
 });
 
 $edits = "";
@@ -16,7 +18,7 @@ foreach ($arquivos as $file) {
     if ('.' === $bas) continue;
     if ('..' === $bas) continue;
     $arquivo = file($file);
-    
+
     $titulo = htmlspecialchars(trim($arquivo[0]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
@@ -36,7 +38,7 @@ if ($edits == "")
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
     </head>
-    
+
     <body>
         <center>
         <h1>Site dos Resumos - Painel Administrativo</h1>

@@ -34,8 +34,8 @@ function formatar($texto) {
     $colorrep = "<span style='color: $1;'>";
     $endcolorreg = "/\[\/cor\]/";
     $endcolorrep = "</span>";
-    
-    
+
+
 
     $texto = htmlspecialchars($texto);
     $texto = substituir_global($linkreg, $linkrep, $texto);
@@ -46,7 +46,7 @@ function formatar($texto) {
     $texto = substituir_global($hcreg, $hcrep, $texto);
     $texto = substituir_global($colorreg, $colorrep, $texto);
     $texto = substituir_global($endcolorreg, $endcolorrep, $texto);
-    
+
     return $texto;
 }
 
@@ -84,18 +84,20 @@ $conteudo = formatar_array($dadosarr);
     <head>
         <title>Resumo: "<?php echo $titulo; ?>"</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="/stylesheets/dark.css">
-        <link rel="stylesheet" type="text/css" href="resumo.css">
+        <style>
+            <?php echo file_get_contents("resumo.css"); ?>
+        </style>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
     </head>
-    
+
     <body>
+        <?php include("analytics.php"); ?>
         <center>
             <h1>Site dos Resumos</h1>
             <small>
                 <a href="ademir/edita.php?f=<?php echo $file; ?>">[Editar resumo]</a><br>
-                <a href="/resumos">[Voltar à página inicial]</a><br>
+                <a href="..">[Voltar à página inicial]</a><br>
                 Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (1ª E)<br>
             </small><br>
         </center>
@@ -114,12 +116,12 @@ $conteudo = formatar_array($dadosarr);
         <br>
         <br>
         <footer>
-            <small>Tudo programado por Bruno Borges Paschoalinoto.<br>
-            O conteúdo aqui foi criado por pessoas diversas.</small>
+            <small>Tudo programado por Bruno Borges Paschoalinoto (1º E).<br>
+            O conteúdo aqui foi criado por um monte de pessoas. :D</small>
         </footer>
         <script>
             filename = "<?php echo $file; ?>";
+            <?php echo file_get_contents("resumo.js"); ?>
         </script>
-        <script src="resumo.js"></script>
     </body>
 </html>
