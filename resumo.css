@@ -118,5 +118,8 @@ footer {
 }
 
 sup, sub {
-    font-size: 0.66em;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: 1px;
+    font-size: 0.7em;
 }
