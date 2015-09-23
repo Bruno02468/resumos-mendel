@@ -44,8 +44,9 @@ if ($edits == "")
         <h1>Site dos Resumos - Painel Administrativo</h1>
         <br>
         <big>
-            <a href="/resumos">[Página inicial]</a><br>
-            <a href="cria.html">[Criar um resumo]</a><br>
+            <a href="..">[Página inicial]</a><br><br>
+            <a href="cria.html">[Criar um resumo]</a><br><br>
+            <a target="_blank" href="estilo.html">[Manual de Estilo]</a><br>
         </big>
         <br>
         <br>

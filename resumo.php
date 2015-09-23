@@ -96,7 +96,7 @@ $conteudo = formatar_array($dadosarr);
         <center>
             <h1>Site dos Resumos</h1>
             <small>
-                <a href="ademir/edita.php?f=<?php echo $file; ?>">[Editar resumo]</a><br>
+                <a href="../ademir/edita.php?f=<?php echo $file; ?>">[Editar resumo]</a><br>
                 <a href="..">[Voltar à página inicial]</a><br>
                 Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (1ª E)<br>
             </small><br>
