@@ -50,6 +50,7 @@ function formatar($texto) {
     $texto = substituir_global($colorreg, $colorrep, $texto);
     $texto = substituir_global($endcolorreg, $endcolorrep, $texto);
     $texto = substituir_global($sureg, $surep, $texto);
+    $texto = substituir_global("/\{l\}/", "ℓ", $texto);
 
     return $texto;
 }
@@ -99,9 +100,9 @@ $conteudo = formatar_array($dadosarr);
         <?php include("analytics.php"); ?>
         <center>
             <h1>Site dos Resumos</h1>
+            <a href="..">[Voltar à página inicial]</a><br>
             <small>
                 <a href="../ademir/edita.php?f=<?php echo $file; ?>">[Editar resumo]</a><br>
-                <a href="..">[Voltar à página inicial]</a><br>
                 Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (1ª E)<br>
             </small><br>
         </center>
