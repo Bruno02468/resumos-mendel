@@ -75,7 +75,7 @@ if (!$arquivo) {
 
 $titulo = formatar(trim($arquivo[0]));
 $autoria = formatar(trim($arquivo[1]));
-$likes = trim($arquivo[2]);
+$likes = substr_count($arquivo[2], ";") - 1;
 $dadosarr = $arquivo;
 unset($dadosarr[0]);
 unset($dadosarr[1]);
@@ -114,7 +114,6 @@ $conteudo = formatar_array($dadosarr);
         <br>
         <a href="javascript:void(0);" onclick="gostei();">Gostei desse resumo!</a> [<span id="likes"><?php echo $likes; ?></span>]<br>
         </h3>
-        <br>
         <br>
         <div class="conteudo"><?php echo $conteudo; ?></div>
         <br>

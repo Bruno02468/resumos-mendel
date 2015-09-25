@@ -18,7 +18,14 @@ if (!file_exists($filename))
 $arquivo = file($filename);
 $titulo = trim($arquivo[0]);
 $autoria = trim($arquivo[1]);
-$likes = $arquivo[2] + 1;
+$likes = trim($arquivo[2]);
+$ip = trim($_SERVER['REMOTE_ADDR']);
+$delim = ";";
+if (substr_count($likes, $delim) == 0)
+    $likes = $delim;
+if (!in_array($ip, explode($delim, $likes))) {
+    $likes .= trim($ip . $delim);
+}
 $dadosarr = $arquivo;
 unset($dadosarr[0]);
 unset($dadosarr[1]);
@@ -26,6 +33,6 @@ unset($dadosarr[2]);
 $dados = implode($dadosarr);
 $arquivo = "$titulo\n$autoria\n$likes\n$dados";
 file_put_contents($filename, $arquivo);
-echo $likes;
+echo substr_count($likes, $delim) - 1;
 
 ?>

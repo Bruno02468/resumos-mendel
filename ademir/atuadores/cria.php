@@ -33,7 +33,7 @@ $titulo = req('titulo');
 $autoria = req('autoria');
 $dados = req('dados');
 
-$arquivo = "$titulo\n$autoria\n0\n$dados";
+$arquivo = "$titulo\n$autoria\n;\n$dados";
 file_put_contents($pasta . $filename, $arquivo);
 
 $host  = $_SERVER['HTTP_HOST'];
