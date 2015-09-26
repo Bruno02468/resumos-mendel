@@ -33,7 +33,7 @@ foreach ($arquivos as $file) {
 
     $final .= "<span><a target=\"_blank\" href=\"resumo/$bas\">\"<b><i>$titulo</i></b>\", por $autoria</a><br><br></span>";
     if ($curr == $lim) break;
-    $lim++;
+    $curr++;
 }
 
 if ($final == "")
