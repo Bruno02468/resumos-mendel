@@ -1,12 +1,6 @@
 <?php
 
-function req($str) {
-    if (!isset($_POST[$str])) {
-        die("Variável POST \"" . $str . "\" necessária para esta requisição.");
-    } else {
-        return $_POST[$str];
-    }
-}
+include("../../funcs.php");
 
 $pasta = "../../dados/";
 
@@ -24,20 +18,18 @@ function filename($length = 10) {
         return filename();
 }
 
-$filename = trim(req("fname"));
+$filename = trim(req_post("fname"));
 
 if ($filename == "" or !ctype_alnum($filename) or file_exists($pasta . $filename))
     $filename = filename();
 
-$titulo = req('titulo');
-$autoria = req('autoria');
-$dados = req('dados');
+$titulo = req_post('titulo');
+$autoria = req_post('autoria');
+$dados = req_post('dados');
 
 $arquivo = "$titulo\n$autoria\n;\n$dados";
 file_put_contents($pasta . $filename, $arquivo);
 
-$host  = $_SERVER['HTTP_HOST'];
-$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-header("Location: http://$host$uri/../../resumo/$filename");
+redir("../../resumo/$filename");
 
 ?>

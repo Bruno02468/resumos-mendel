@@ -1,6 +1,6 @@
 <?php
 
-date_default_timezone_set("America/Sao_Paulo");
+include("funcs.php");
 
 $pasta = "dados/";
 
@@ -11,18 +11,29 @@ usort($arquivos, function($a, $b) {
     return trim($fa[2]) < trim($fb[2]);
 });
 
+$mats = array();
+$links = "";
 $final = "";
-
+$lim = 5;
+$curr = 1;
 foreach ($arquivos as $file) {
     $bas = basename($file);
-    if ('.' === $bas) continue;
-    if ('..' === $bas) continue;
+    if ("." === $bas) continue;
+    if (".." === $bas) continue;
     $arquivo = file($file);
 
     $titulo = htmlspecialchars(trim($arquivo[0]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $final .= "<span><a target='_blank' href=\"resumo/$bas\">\"<i>$titulo</i>\", por $autoria</a><br><br></span>";
+    $materia = explode(":", $titulo)[0];
+    if (!in_array($materia, $mats)) {
+        array_push($mats, $materia);
+        $links .= "<br><button onclick=\"showMat('$materia')\">Mostrar resumos de $materia</button>";
+    }
+
+    $final .= "<span><a target=\"_blank\" href=\"resumo/$bas\">\"<b><i>$titulo</i></b>\", por $autoria</a><br><br></span>";
+    if ($curr == $lim) break;
+    $lim++;
 }
 
 if ($final == "")
@@ -48,14 +59,16 @@ if ($final == "")
             <a href="ademir/">[Somente pessoal autorizado]</a>
         </small><br>
         <br>
-        <br>
-        <!--Pesquisar: <input type="text" id="pesq" oninput="pesquisar(this.value)" style="width: 20%"><br>
-        <br>-->
-        <span id="msg">Todos os resumos:</span><br>
+        <span id="msg">Resumos Top 5:</span><br>
         <br>
         <div id="resumos">
             <?php echo $final; ?>
         </div>
+        <br>
+        Mostrar resumos de uma certa matéria:<br>
+        <?php echo $links; ?>
+        <br>
+        <span id="pormat"></span>
         </center>
         <script src="index.js"></script>
     </body>
