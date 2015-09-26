@@ -30,7 +30,7 @@ foreach ($arquivos as $file) {
         array_push($mats, $materia);
         $links .= "<br><button onclick=\"showMat('$materia')\">Mostrar resumos de $materia</button>";
     }
-    if ($curr < $lim)
+    if ($curr <= $lim)
         $final .= "<span><a target=\"_blank\" href=\"resumo/$bas\">\"<b><i>$titulo</i></b>\", por $autoria</a><br><br></span>";
     $curr++;
 }
