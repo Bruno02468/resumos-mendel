@@ -1,7 +1,7 @@
 <?php
 
 // Arquivo comum para funções muito usadas.
-// Escrito or Bruno Borges Paschoalinoto.
+// Escrito por Bruno Borges Paschoalinoto.
 
 date_default_timezone_set("America/Sao_Paulo");
 
@@ -10,6 +10,7 @@ function redir($relative) {
     $host  = $_SERVER["HTTP_HOST"];
     $uri  = rtrim(dirname($_SERVER["PHP_SELF"]), "/\\");
     header("Location: http://$host$uri/$relative");
+    die("Redirecionamento em progresso...");
 }
 
 // Exige uma variável GET 100% esperada (e.g. de um form)
@@ -26,7 +27,7 @@ function req_get($str) {
 // e cancela a execução caso ela não esteja presente.
 function req_post($str) {
     if (!isset($_POST[$str])) {
-        die("Variável POST\"" . $str . "\" necessária para esta requisição.");
+        die("Variável POST \"" . $str . "\" necessária para esta requisição.");
     } else {
         return $_POST[$str];
     }

@@ -4,16 +4,16 @@ include("funcs.php");
 
 $pasta = "dados/";
 
+$file = trim(req_get("f"));
 
-$file = req_get("f");
+if ($file == "" || !file_exists($pasta . $file))
+    redir("./");
 
 $arquivo = file($pasta . $file);
 
-if (!$arquivo) {
-    die("Arquivo não encontrado. Esse link deve estar quebrado. Volte à <a href='/resumos'>página inicial</a>.");
-}
-
-$titulo = formatar(trim($arquivo[0]));
+$first = explode(":", trim($arquivo[0]), 2);
+$materia = $first[0];
+$assunto = $first[1];
 $autoria = formatar(trim($arquivo[1]));
 $likes = substr_count($arquivo[2], ";") - 1;
 $dadosarr = $arquivo;
@@ -27,7 +27,7 @@ $conteudo = formatar_array($dadosarr);
 
 <html>
     <head>
-        <title>Resumo: "<?php echo $titulo; ?>"</title>
+        <title>Resumo de <?php echo $materia; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
             <?php echo file_get_contents("resumo.css"); ?>
@@ -43,16 +43,17 @@ $conteudo = formatar_array($dadosarr);
             <a href="..">[Voltar à página inicial]</a><br>
             <small>
                 <a href="../ademir/edita.php?f=<?php echo $file; ?>">[Editar resumo]</a><br>
-                Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (1ª E)<br>
+                Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (1º E)<br>
             </small><br>
         </center>
         <br>
-        <h3>
-        Título do resumo: <b><?php echo $titulo; ?></b><br>
-        <br>
-        Escrito por: <b><?php echo $autoria; ?></b><br>
-        <br>
-        <a href="javascript:void(0);" onclick="gostei();">Gostei desse resumo!</a> [<span id="likes"><?php echo $likes; ?></span>]<br>
+         <table style="font-size: 1.17em">
+            <tr><td class="right">Resumo de: </td><td><b><?php echo $materia; ?></b></td></tr>
+            <tr><td class="right">Assunto: </td><td><b><?php echo $assunto; ?></b></td></tr>
+            <tr><td class="right">Escrito por: </td><td><b><?php echo $autoria; ?></b></tr>
+        </table>
+        <h3 style="font-weight: normal;">
+            <a href="javascript:void(0);" onclick="gostei();">Gostei desse resumo!</a> [<span id="likes"><?php echo $likes; ?></span>]<br>
         </h3>
         <br>
         <div class="conteudo"><?php echo $conteudo; ?></div>

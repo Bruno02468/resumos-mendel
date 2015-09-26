@@ -127,3 +127,7 @@ sup, sub {
 b, i, u {
     color: inherit;
 }
+
+.right {
+    text-align: right;
+}

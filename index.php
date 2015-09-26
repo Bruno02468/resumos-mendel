@@ -52,22 +52,23 @@ if ($final == "")
     <body>
         <?php include("analytics.php"); ?>
         <center>
-        <h1>Site dos Resumos</h1>
-        <small>
-            Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (1º E)<br>
-            <a href="ademir/">[Somente pessoal autorizado]</a>
-        </small><br>
-        <br>
-        <span id="msg">Resumos Top 5:</span><br>
-        <br>
-        <div id="resumos">
-            <?php echo $final; ?>
-        </div>
-        <br>
-        Mostrar resumos de uma certa matéria:<br>
-        <?php echo $links; ?>
-        <br>
-        <span id="pormat"></span>
+            <h1>Site dos Resumos</h1>
+            <small>
+                Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (1º E)<br>
+                <small><a href="ademir/">[Somente pessoal autorizado]</a></small>
+            </small><br>
+            <br>
+            <span id="msg">Resumos mais populares:</span><br>
+            <br>
+            <div id="resumos">
+                <?php echo $final; ?>
+            </div>
+            <br>
+            Mostrar resumos de uma certa matéria:<br>
+            <?php echo $links; ?><br>
+            <button onclick="pormat.innerHTML = '';"><b>Não mostrar resumos de nada</b></button>
+            <br>
+            <span id="pormat"></span>
         </center>
         <script src="index.js"></script>
     </body>

@@ -1,6 +1,6 @@
 <?php
 
-date_default_timezone_set("America/Sao_Paulo");
+include("../funcs.php");
 
 $pasta = "../dados/";
 
@@ -22,7 +22,7 @@ foreach ($arquivos as $file) {
     $titulo = htmlspecialchars(trim($arquivo[0]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $edits .= "<a target='_blank' href=\"edita.php?f=$bas\">\"<i>$titulo</i>\", por $autoria.</a><br><br>";
+    $edits .= "<a target='_blank' href=\"edita.php?f=$bas\">\"<b><i>$titulo</i></b>\", por $autoria.</a><br><br>";
 }
 
 if ($edits == "")
@@ -34,7 +34,7 @@ if ($edits == "")
     <head>
         <title>Painel Administrativo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="/stylesheets/dark.css">
+        <link rel="stylesheet" type="text/css" href="../resumo.css">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
     </head>
