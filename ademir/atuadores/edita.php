@@ -4,7 +4,7 @@ include("../../funcs.php");
 
 $filename = req_post("filename");
 $path = "../../dados/" . $filename;
-if (!file_exists($path) or !ctype_alnum($filename))
+if (!file_exists($path) or !validar_nome($filename))
     die("Erro: você não foi o primeiro a pensar nisso.");
 $materia = req_post("materia");
 $assunto = req_post("assunto");

@@ -20,7 +20,7 @@ function filename($length = 10) {
 
 $filename = trim(req_post("fname"));
 
-if ($filename == "" or !ctype_alnum($filename) or file_exists($pasta . $filename))
+if ($filename == "" or !validar_nome($filename) or file_exists($pasta . $filename))
     $filename = filename();
 
 $titulo = req_post("materia") . ": " . req_post('titulo');

@@ -21,12 +21,13 @@ foreach ($arquivos as $file) {
     if (".." === $bas) continue;
     $arquivo = file($file);
 
-    $titulo = htmlspecialchars(trim($arquivo[0]));
+    $first = explode(":", trim($arquivo[0]), 2);
+    $materia = htmlspecialchars(trim($first[0]));
+    $assunto = htmlspecialchars(trim($first[1]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $materia = explode(":", $titulo)[0];
     if ($materia == $mat)
-        echo "<a target=\"_blank\" href=\"resumo/$bas\">\"<b><i>$titulo</i></b>\", por $autoria</a><br><br>";
+        echo "<a target=\"_blank\" href=\"resumo/$bas\">Resumo sobre \"<b><i>$assunto</i></b>\", por $autoria</a><br><br>";
 }
 
 ?>

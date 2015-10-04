@@ -84,4 +84,10 @@ function formatar_array($arr) {
         $res .= formatar($line) . ($key <= count($arr) + 1 ? "<br>" : "");
     return $res;
 }
+
+function validar_nome($nome) {
+  $permitido = array("-", "_");
+
+  return ctype_alnum(str_replace($permitido, "", $nome));
+}
 ?>
