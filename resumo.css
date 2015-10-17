@@ -91,7 +91,7 @@ button, input[type=button], input[type=submit] {
 
 .conteudo {
     margin-left: 20px;
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
 img {
