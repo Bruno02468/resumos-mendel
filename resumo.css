@@ -2,7 +2,7 @@ body {
     background-color: #10110E;
 }
 
-.mono {
+code, .mono {
     font-family: monospace;
 }
 
@@ -130,4 +130,27 @@ b, i, u {
 
 .right {
     text-align: right;
+}
+
+.restable {
+    border: 2px double #A4FFA4;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+	margin-bottom: 10px;
+}
+
+.restable td, .restable th {
+    border-top: 1px solid #A4FFA4;
+    border-left: 1px solid #A4FFA4;
+    padding: 3px;
+    padding-right: 5px;
+}
+
+.restable td:first-child {
+    border-left: none;
+}
+
+.restable tr:first-child td {
+    border-top: none;
 }
