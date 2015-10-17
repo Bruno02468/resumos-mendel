@@ -82,7 +82,7 @@ function formatar($texto) {
 function formatar_array($arr) {
     $res = "";
     foreach ($arr as $key => $line)
-        $res .= formatar($line) . ($key <= count($arr) + 1 ? "<br>" : "");
+        $res .= formatar($line);
     return $res;
 }
 
