@@ -156,3 +156,10 @@ b, i, u {
 .restable tr:first-child td {
     border-top: none;
 }
+
+.ajude {
+    color: cyan !important;
+    border: 2px double #A4FFA4;
+    border-radius: 8px;
+    padding: 8px;
+}

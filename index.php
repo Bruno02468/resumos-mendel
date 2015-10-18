@@ -56,7 +56,12 @@ if ($final == "")
             <small>
                 Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (1º E)<br>
                 <small><a href="ademir/">[Somente pessoal autorizado]</a></small>
-            </small><br>
+            </small>
+            <br>
+            <br>
+            <br>
+            <a class="ajude" target="_blank" href="ajude.html">Faça um resumo e ajude um amigo!</a><br>
+            <br>
             <br>
             <span id="msg">Resumos mais populares:</span><br>
             <br>
