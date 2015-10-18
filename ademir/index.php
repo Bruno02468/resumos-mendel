@@ -45,10 +45,13 @@ if ($edits == "")
         <h1>Site dos Resumos - Painel Administrativo</h1>
         <br>
         <big>
-            <a href="..">[Página inicial]</a><br><br>
-            <a href="cria.html">[Criar um resumo]</a><br><br>
+            <a href="..">[Página inicial]</a><br>
+            <br>
+            <a href="cria.html">[Criar um resumo]</a><br>
+            <br>
             <a target="_blank" href="estilo.html">[Manual de Estilo]</a><br>
-            <a target="../visual" href="estilo.html">[Editor Visual]</a> (em testes)<br>
+            <br>
+            <a target="_blank" href="../visual/">[Editor Visual]</a> (em testes)<br>
         </big>
         <br>
         <br>
