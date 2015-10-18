@@ -1,21 +1,48 @@
 var inp = document.getElementById("editor");
 var out = document.getElementById("out");
-var req;
 var selection = [0, 0];
 
-function output() {
-    if (req.readyState == 4)
-        if (req.status == 200)
-            out.innerHTML = req.responseText;
+if (localStorage) {
+    inp.value = localStorage["dados"] || "";
 }
 
 function preview() {
-    var fd = new FormData();
-    fd.append("dados", inp.value);
-    req = new XMLHttpRequest();
-    req.open("POST", "preview.php");
-    req.onreadystatechange = output;
-    req.send(fd);
+    var texto = inp.value;
+    var linkreg = /\[([^\]]+)\|([^\]]+)\]/gi;
+    var linkrep = "<a target=\"_blank\" href=\"$1\">$2</a>";
+    var nbspreg = /^ +/gi;
+    var nbsprep = "&nbsp;";
+    var imgreg = /\[imagem:([^\]]+)\]/gi;
+    var imgrep = "<a target=\"_blank\" title=\"Clique para ver o tamanho completo.\" href=\"$1\"><img src=\"$1\"></a>";
+    var h4reg = /\[big\]/gi;
+    var h4rep = "<div class=\"big\">";
+    var hcreg = /\[\/big\]/gi;
+    var hcrep = "</div>";
+    var colorreg = /\[cor:([^\]]+)\]/gi;
+    var colorrep = "<span style=\"color: $1;\">";
+    var endcolorreg = /\[\/cor\]/gi;
+    var endcolorrep = "</span>";
+    var fourreg = /    /gi;
+    var fourrep = "&nbsp;&nbsp;&nbsp;&nbsp;";
+    var tagreg = /\[((table|tr|td|sub|sup|b|i|u|s|code)|(\/(table|tr|td|sub|sup|b|i|u|s|codetags)))\]/gi;
+    var tagrep = "<$1>";
+    var tablereg = /<table>/gi;
+    var tablerep = "<table class=\"restable\">";
+
+    texto = texto.replace(fourreg, fourrep)
+        .replace(linkreg, linkrep)
+        .replace(nbspreg, nbsprep)
+        .replace(imgreg, imgrep)
+        .replace(h4reg, h4rep)
+        .replace(hcreg, hcrep)
+        .replace(colorreg, colorrep)
+        .replace(endcolorreg, endcolorrep)
+        .replace(tagreg, tagrep)
+        .replace(tablereg, tablerep)
+        .replace(/\{l\}/, "ℓ");
+
+    localStorage["dados"] = inp.value;
+    out.innerHTML = texto;
 }
 
 String.prototype.insertAt = function(index, string) {
