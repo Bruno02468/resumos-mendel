@@ -2,8 +2,9 @@ body {
     background-color: #10110E;
 }
 
-code, .mono {
+code, .mono, .editor {
     font-family: monospace;
+    font-size: 14px;
 }
 
 hr {
@@ -57,7 +58,7 @@ footer {
 
 /* TEXT INPUTS */
 
-input[type=text], textarea {
+input[type=text], .editor, textarea {
     /*-webkit-transition: all 0.30s ease-in-out;
     -moz-transition: all 0.30s ease-in-out;
     -ms-transition: all 0.30s ease-in-out;
@@ -70,7 +71,7 @@ input[type=text], textarea {
     border-radius: 2px;
 }
 
-input[type=text]:focus, textarea:focus {
+input[type=text]:focus, .editor:focus,  textarea:focus {
     background: #40413E;
     box-shadow: 0 0 7px #3DFF33;
     padding: 3px 0px 3px 3px;

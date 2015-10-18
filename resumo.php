@@ -16,12 +16,11 @@ $materia = $first[0];
 $assunto = $first[1];
 $autoria = formatar(trim($arquivo[1]));
 $likes = substr_count($arquivo[2], ";") - 1;
-$dadosarr = $arquivo;
-unset($dadosarr[0]);
-unset($dadosarr[1]);
-unset($dadosarr[2]);
+unset($arquivo[0]);
+unset($arquivo[1]);
+unset($arquivo[2]);
 
-$conteudo = formatar_array($dadosarr);
+$conteudo = formatar(implode("", $arquivo));
 
 ?>
 

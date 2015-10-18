@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Editor Visual</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="../resumo.css">
+        <link rel="stylesheet" type="text/css" href="editor.css">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    </head>
+
+    <body>
+        <center>
+            <h1>Editor Visual de Resumos<sub><small>BETA</small></sub></h1>
+            <br>
+            <br>
+            <div id="ferramentas">
+                Selecione o texto e clique em um dos botões. Fique de olho na pré-visualização lá em baixo!<br>
+                <button onclick="limpar()">Limpar</button>
+                <button onclick="enclose('b')">Negrito</button>
+                <button onclick="enclose('i')">Itálico</button>
+                <button onclick="enclose('u')">Sublinhado</button>
+                <button onclick="enclose('s')">Cortado</button>
+                <button onclick="enclose('sub')">Subscrito</button>
+                <button onclick="enclose('sup')">Superscrito</button>
+                <button onclick="enclose('code')">Monoespaçado</button>
+                <button onclick="imagem()">Inserir imagem</button>
+                <button onclick="link()">Inserir link</button>
+            </div>
+            <textarea oninput="preview();" onblur="selection = [this.selectionStart, this.selectionEnd]" id="editor" class="editor" autofocus></textarea>
+        </center>
+        <br>
+        <br>
+        <h3>Pré-visualização:</h3>
+        <br>
+        <div class="conteudo" id="out"></div>
+        <script src="visual.js"></script>
+    </body>
+</html>
