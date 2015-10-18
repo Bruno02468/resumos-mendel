@@ -60,7 +60,7 @@ if ($final == "")
             <br>
             <br>
             <br>
-            <a class="ajude" target="_blank" href="ajude.html">Faça um resumo e ajude um amigo!</a><br>
+            <a class="ajude" target="_blank" href="ajude.php">Faça um resumo e ajude um amigo!</a><br>
             <br>
             <br>
             <span id="msg">Resumos mais populares:</span><br>
