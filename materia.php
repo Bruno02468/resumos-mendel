@@ -1,6 +1,11 @@
 <?php
 
 include("funcs.php");
+$mat= "";
+if (isset($_GET["mat"]))
+    $mat = $_GET["mat"];
+else
+    redir("..");
 
 $pasta = "dados/";
 
@@ -11,11 +16,7 @@ usort($arquivos, function($a, $b) {
     return trim($fa[2]) < trim($fb[2]);
 });
 
-$mats = array();
 $links = "";
-$final = "";
-$lim = 5;
-$curr = 1;
 foreach ($arquivos as $file) {
     $bas = basename($file);
     if ("." === $bas) continue;
@@ -24,32 +25,22 @@ foreach ($arquivos as $file) {
 
     $first = explode(":", trim($arquivo[0]), 2);
     $materia = htmlspecialchars(trim($first[0]));
+    if ($materia != $mat) continue;
+
     $assunto = htmlspecialchars(trim($first[1]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-
-    if (!in_array($materia, $mats)) {
-        array_push($mats, $materia);
-        //$listar = "ou <a class=\"orange_link\" href=\"javascript:void(0)\" onclick=\"showMat('$materia')\">listar aqui</a>";
-        $links .= "<br><big><big><a href=\"materia/$materia\">[$materia]</b></a></big></big><br>";
-    }
-    if ($curr <= $lim)
-        $final .= "<span><a target=\"_blank\" href=\"resumo/$bas\">$assunto</a>, por $autoria<br><br></span>";
-    $curr++;
+    $links .= "<a target=\"_blank\" href=\"../resumo/$bas\">Resumo sobre \"<b><i>$assunto</i></b>\", por $autoria</a><br><br>";
 }
 
-if ($final == "")
-    $final = "Nenhum resumo disponível agora...";
-
 ?>
-
 <html>
     <head>
         <title>Resumos</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="resumo.css">
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="../resumo.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon.ico" type="image/x-icon">
     </head>
 
     <body>
@@ -66,18 +57,12 @@ if ($final == "")
             <a class="ajude" target="_blank" href="ajude.php">Faça um resumo e ajude um amigo!</a><br>
             <br>
             <br>
-            <span id="msg">Resumos mais populares:</span><br>
+            <a href="..">[Voltar à página inicial]</a><br>
             <br>
-            <div id="resumos">
-                <?php echo $final; ?>
-            </div>
             <br>
-            Resumos por matéria:<br>
-            <?php echo $links; ?><br>
-            <!--<a class="orange_link" href="javascript:void(0)" onclick="pormat.innerHTML = '';">Não listar nada</a>-->
+            <span id="msg">Resumos de <?php echo $mat; ?>:</span><br>
             <br>
-            <span id="pormat"></span>
+            <?php echo $links; ?>
         </center>
-        <script src="index.js"></script>
     </body>
 </html>

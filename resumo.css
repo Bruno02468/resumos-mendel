@@ -168,3 +168,12 @@ b, i, u {
     color: cyan !important;
     font-weight: bold;
 }
+
+.orange_link {
+    color:orange !important;
+}
+
+.orange_link:hover {
+    color: orange !important;
+    font-weight: bold;
+}
