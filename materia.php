@@ -30,7 +30,7 @@ foreach ($arquivos as $file) {
     $assunto = htmlspecialchars(trim($first[1]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $links .= "<a target=\"_blank\" href=\"../resumo/$bas\">Resumo sobre \"<b><i>$assunto</i></b>\", por $autoria</a><br><br>";
+    $links .= "<a target=\"_blank\" href=\"../resumo/$bas\">$assunto</a>, por $autoria<br><br>";
 }
 
 ?>
@@ -39,8 +39,8 @@ foreach ($arquivos as $file) {
         <title>Resumos</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="../resumo.css">
-        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-        <link rel="icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
     </head>
 
     <body>
