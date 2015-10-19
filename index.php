@@ -8,7 +8,7 @@ $arquivos = glob($pasta . "*");
 usort($arquivos, function($a, $b) {
     $fa = file($a);
     $fb = file($b);
-    return trim($fa[2]) < trim($fb[2]);
+    return (substr_count($fa[2], ";") - 1) < (substr_count($fb[2], ";") - 1);
 });
 
 $mats = array();
