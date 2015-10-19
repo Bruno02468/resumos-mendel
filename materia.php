@@ -30,7 +30,7 @@ foreach ($arquivos as $file) {
     $assunto = htmlspecialchars(trim($first[1]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $links .= "<a target=\"_blank\" href=\"../resumo/$bas\">$assunto</a>, por $autoria<br><br>";
+    $links .= "<a target=\"_blank\" href=\"../resumo/$bas\">$assunto</a><br><br>";
 }
 
 ?>
@@ -60,9 +60,10 @@ foreach ($arquivos as $file) {
             <a href="..">[Voltar à página inicial]</a><br>
             <br>
             <br>
+            <big><big>
             <span id="msg">Resumos de <?php echo $mat; ?>:</span><br>
             <br>
-            <?php echo $links; ?>
+            <?php echo $links; ?></big></big>
         </center>
     </body>
 </html>
