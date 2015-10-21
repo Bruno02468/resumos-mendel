@@ -33,8 +33,11 @@ foreach ($arquivos as $file) {
         //$listar = "ou <a class=\"orange_link\" href=\"javascript:void(0)\" onclick=\"showMat('$materia')\">listar aqui</a>";
         $links .= "<br><big><big><a href=\"materia/$materia\">[$materia]</b></a></big></big><br>";
     }
-    if ($curr <= $lim)
-        $final .= "<span><a target=\"_blank\" href=\"resumo/$bas\">$assunto</a>, por $autoria<br><br></span>";
+    if ($curr <= $lim)  {
+        $likes = substr_count($arquivo[2], ";") - 1;
+        $s = $likes == 1 ? "" : "s";
+        $final .= "<span><a target=\"_blank\" href=\"resumo/$bas\">$assunto</a>, por $autoria, com $likes like$s<br><br></span>";
+    }
     $curr++;
 }
 
@@ -66,7 +69,7 @@ if ($final == "")
             <a class="ajude" target="_blank" href="ajude.php">Faça um resumo e ajude um amigo!</a><br>
             <br>
             <br>
-            <span id="msg">Resumos mais populares:</span><br>
+            <span id="msg">Resumos com mais likes:</span><br>
             <br>
             <div id="resumos">
                 <?php echo $final; ?>
