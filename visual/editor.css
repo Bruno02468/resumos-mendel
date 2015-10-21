@@ -1,4 +1,20 @@
 .editor {
     width: 75%;
     height: 50%;
+    font-size: 14px;
+}
+
+#cores {
+    font-family: sans;
+    background-color: #333;
+    width: auto;
+    display: table;
+    padding: 5px;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+}
+
+#prev {
+    border: 2px solid black;
 }

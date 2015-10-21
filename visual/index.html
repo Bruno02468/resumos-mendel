@@ -11,22 +11,37 @@
     <body>
         <center>
             <h1>Editor Visual de Resumos<sub><small>BETA</small></sub></h1>
-            <br>
+            Este editor visa dispensar a edição direta de código de resumos.<br>
+            Ainda estou testando, tenha paciência.<br>
             <br>
             <div id="ferramentas">
-                Selecione o texto e clique em um dos botões. Fique de olho na pré-visualização lá em baixo!<br>
-                <button onclick="limpar()">Limpar</button>
-                <button onclick="enclose('b')">Negrito</button>
-                <button onclick="enclose('i')">Itálico</button>
-                <button onclick="enclose('u')">Sublinhado</button>
+                Selecione o texto e clique em um desses botões para aplicar um efeito de texto.<br>
+                <button onclick="limpar()">Limpar efeitos</button>
+                <button onclick="enclose('b')"><b>Negrito</b></button>
+                <button onclick="enclose('i')"><i>Itálico</i></button>
+                <button onclick="enclose('u')"><u>Sublinhado</u></button>
                 <button onclick="enclose('s')">Cortado</button>
                 <button onclick="enclose('sub')">Subscrito</button>
                 <button onclick="enclose('sup')">Superscrito</button>
                 <button onclick="enclose('code')">Monoespaçado</button>
+                <button onclick="enclose('big')">Grande</button>
+                <button onclick="cor()" id="colorButton" title="Use o seletor ali em cima!">Texto colorido</button>
+                <br>
+                Ou posicione o cursor e clique em um dos botões para inserir links, imagens, tabelas, etc.<br>
+                <button onclick="inserir('[hr]')">Inserir linha horizontal</button>
                 <button onclick="imagem()">Inserir imagem</button>
                 <button onclick="link()">Inserir link</button>
+                <button onclick="tabela()">Inserir tabela</button>
             </div>
-            <textarea oninput="preview();" onblur="selection = [this.selectionStart, this.selectionEnd]" id="editor" class="editor" autofocus></textarea>
+            <textarea oninput="preview();" onblur="updateSelection()" id="editor" class="editor" autofocus></textarea>
+            <div id="cores">Seletor de cores:<br>
+                <table>
+                    <tr><td>Vermelho:</td><td><input oninput="updateColors()" value="0" type="range" min="0" max="255" id="r"></td></tr>
+                    <tr><td>Verde:</td><td><input oninput="updateColors()" value="0" type="range" min="0" max="255" id="g"></td></tr>
+                    <tr><td>Azul:</td><td><input oninput="updateColors()" value="0" type="range" min="0" max="255" id="b"></td></tr>
+                    <tr><td>Prévia:</td><td id="prev"></td></tr>
+                </table>
+            </div>
         </center>
         <br>
         <br>

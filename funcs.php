@@ -57,7 +57,7 @@ function formatar($texto) {
     $endcolorrep = "</span>";
     $fourreg = "/    /";
     $fourrep = "&nbsp;&nbsp;&nbsp;&nbsp;";
-    $tags = "table|tr|td|sub|sup|b|i|u|s|code";
+    $tags = "table|tr|td|sub|sup|b|i|u|s|code|br|hr";
     $tagreg = "/\[(($tags)|(\/($tags)))\]/";
     $tagrep = "<$1>";
     $tablereg = "/<table>/";
