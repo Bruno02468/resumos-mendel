@@ -35,7 +35,10 @@ function preview() {
     var tablereg = /<table>/gi;
     var tablerep = "<table class=\"restable\">";
 
-    texto = texto.replace(fourreg, fourrep)
+    texto = texto
+        .replace(/\{l\}/, "ℓ")
+        .replace(/\{g\}/, "[sup]↗[/sup]")
+        .replace(fourreg, fourrep)
         .replace(linkreg, linkrep)
         .replace(nbspreg, nbsprep)
         .replace(imgreg, imgrep)
@@ -44,8 +47,7 @@ function preview() {
         .replace(colorreg, colorrep)
         .replace(endcolorreg, endcolorrep)
         .replace(tagreg, tagrep)
-        .replace(tablereg, tablerep)
-        .replace(/\{l\}/, "ℓ");
+        .replace(tablereg, tablerep);
 
     localStorage["dados"] = inp.value;
     out.innerHTML = texto;

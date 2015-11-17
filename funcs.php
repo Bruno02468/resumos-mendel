@@ -64,6 +64,8 @@ function formatar($texto) {
     $tablerep = "<table class=\"restable\">";
 
     $texto = htmlspecialchars($texto);
+    $texto = substituir_global("/\{l\}/", "ℓ", $texto);
+    $texto = substituir_global("/\{g\}/", "[sup]↗[/sup]", $texto);
     $texto = substituir_global($fourreg, $fourrep, $texto);
     $texto = substituir_global($linkreg, $linkrep, $texto);
     $texto = substituir_global($nbspreg, $nbsprep, $texto);
@@ -74,7 +76,6 @@ function formatar($texto) {
     $texto = substituir_global($endcolorreg, $endcolorrep, $texto);
     $texto = substituir_global($tagreg, $tagrep, $texto);
     $texto = substituir_global($tablereg, $tablerep, $texto);
-    $texto = substituir_global("/\{l\}/", "ℓ", $texto);
 
     return $texto;
 }
