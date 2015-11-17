@@ -12,8 +12,18 @@ if (localStorage) {
     preview();
 }
 
+var dummy = document.createElement("div");
+function htmlspecialchars(string) {
+    if (!dummy) dummy = document.createElement("div");
+    var text = document.createTextNode(string);
+    dummy.appendChild(text);
+    var res = dummy.innerHTML;
+    dummy.innerHTML = "";
+    return res;
+}
+
 function preview() {
-    var texto = inp.value;
+    var texto = htmlspecialchars(inp.value);
     var linkreg = /\[([^\]]+)\|([^\]]+)\]/gi;
     var linkrep = "<a target=\"_blank\" href=\"$1\">$2</a>";
     var nbspreg = /^ +/gi;
