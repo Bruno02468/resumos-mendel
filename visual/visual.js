@@ -36,8 +36,8 @@ function preview() {
     var tablerep = "<table class=\"restable\">";
 
     texto = texto
-        .replace(/\{l\}/, "ℓ")
-        .replace(/\{g\}/, "[sup]↗[/sup]")
+        .replace(/\{l\}/g, "ℓ")
+        .replace(/\{g\}/g, "[sup]↗[/sup]")
         .replace(fourreg, fourrep)
         .replace(linkreg, linkrep)
         .replace(nbspreg, nbsprep)
