@@ -70,17 +70,16 @@ if ($final == "")
             <a class="ajude" target="_blank" href="ajude.php">Faça um resumo e ajude um amigo!</a><br>
             <br>
             <br>
-            <span id="msg">Resumos com mais likes:</span><br>
+            <b>Resumos por matéria:</b><br>
+            <?php echo $links; ?><br>
+            <br>
+            <hr width="40%"><br>
+            <span id="msg"><b>Resumos com mais likes:</b></span><br>
             <br>
             <div id="resumos">
                 <?php echo $final; ?>
             </div>
             <br>
-            Resumos por matéria:<br>
-            <?php echo $links; ?><br>
-            <!--<a class="orange_link" href="javascript:void(0)" onclick="pormat.innerHTML = '';">Não listar nada</a>-->
-            <br>
-            <span id="pormat"></span>
         </center>
         <script src="index.js"></script>
     </body>
