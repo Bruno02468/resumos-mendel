@@ -44,6 +44,8 @@ foreach ($arquivos as $file) {
 if ($final == "")
     $final = "Nenhum resumo disponível agora...";
 
+$fi = new FilesystemIterator($pasta, FilesystemIterator::SKIP_DOTS);
+
 ?>
 
 <html>
@@ -69,11 +71,14 @@ if ($final == "")
             <br>
             <a class="ajude" target="_blank" href="ajude.php">Faça um resumo e ajude um amigo!</a><br>
             <br>
+            <?php echo "Temos " . iterator_count($fi) . " resumos e contando!"; ?><br>
+            <br>
+            <hr>
             <br>
             <b>Resumos por matéria:</b><br>
             <?php echo $links; ?><br>
             <br>
-            <hr width="40%"><br>
+            <hr><br>
             <span id="msg"><b>Resumos com mais likes:</b></span><br>
             <br>
             <div id="resumos">
