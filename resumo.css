@@ -2,8 +2,16 @@ body {
     background-color: #10110E;
 }
 
+:not(span) {
+    color: #D1FFD6;
+    font-family: 'Open Sans', sans-serif;
+}
+
 code, .mono, .editor {
-    font-family: monospace;
+    font-family: monospace; !important
+}
+
+code, code * {
     font-size: 15px;
 }
 
@@ -17,6 +25,10 @@ a {
 
 a:hover {
     color: #3DFF33 !important;
+}
+
+span {
+    font-family: inherit;
 }
 
 footer {
@@ -91,7 +103,7 @@ button, input[type=button], input[type=submit] {
 
 
 .conteudo {
-    margin-left: 20px;
+    margin-left: 7px;
     white-space: pre-wrap;
 }
 
@@ -101,9 +113,9 @@ img {
 }
 
 .big {
-    font-size: 1.33em;
+    font-size: 1.5em;
     font-weight: bold;
-    margin-left: 10px;
+    margin-left: -4px;
 }
 
 footer {
@@ -121,10 +133,7 @@ sup, sub {
     font-size: 0.7em;
 }
 
-* {
-    color: #D1FFD6;
-    font-family: 'Open Sans', sans-serif;
-}
+
 
 b, i, u {
     color: inherit;
