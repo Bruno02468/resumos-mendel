@@ -6,7 +6,7 @@ $pasta = "dados/";
 
 $arquivos = glob($pasta . "*");
 usort($arquivos, function($a, $b) {
-    filectime($b) < filectime($a);
+    filectime($b) > filectime($a);
 });
 
 $links = "";
