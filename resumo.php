@@ -26,7 +26,7 @@ $conteudo = formatar(implode("", $arquivo));
 
 <html>
     <head>
-        <title>Resumo de <?php echo $materia; ?></title>
+        <title><?php echo $assunto; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
             <?php echo file_get_contents("resumo.css"); ?>
@@ -53,6 +53,8 @@ $conteudo = formatar(implode("", $arquivo));
             <tr><td class="right">Escrito por: </td><td><b><?php echo $autoria; ?></b></tr>
         </table>
         <h3 style="font-weight: normal;">
+            <small><a target="_blank" href="../imprimir.php?f=<?php echo $file; ?>">Versão para imprimir</a></small><br>
+            <br>
             <a href="javascript:void(0);" onclick="gostei();">Gostei desse resumo!</a> [<span id="likes"><?php echo $likes; ?></span>]<br>
         </h3>
         <br>
