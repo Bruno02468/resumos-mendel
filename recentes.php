@@ -24,7 +24,7 @@ foreach ($arquivos as $file) {
     $assunto = htmlspecialchars(trim($first[1]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-    $links .= "<a target=\"_blank\" href=\"../resumo/$bas\">$assunto</a><br><br>";
+    $links .= "<a target=\"_blank\" href=\"resumo/$bas\">$assunto</a><br><br>";
     $tot++;
     if ($tot == $max) break;
 }
