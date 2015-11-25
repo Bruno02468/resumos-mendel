@@ -6,16 +6,12 @@ $pasta = "dados/";
 
 $arquivos = glob($pasta . "*");
 usort($arquivos, function($a, $b) {
-    $fa = file($a);
-    $fb = file($b);
-    return (substr_count($fa[2], ";") - 1) < (substr_count($fb[2], ";") - 1);
+    filectime($b) < filectime($a);
 });
 
-$mats = array();
 $links = "";
-$final = "";
-$lim = 5;
-$curr = 1;
+$tot = 0;
+$max = 10;
 foreach ($arquivos as $file) {
     $bas = basename($file);
     if ("." === $bas) continue;
@@ -24,30 +20,16 @@ foreach ($arquivos as $file) {
 
     $first = explode(":", trim($arquivo[0]), 2);
     $materia = htmlspecialchars(trim($first[0]));
+
     $assunto = htmlspecialchars(trim($first[1]));
     $autoria = htmlspecialchars(trim($arquivo[1]));
 
-
-    if (!in_array($materia, $mats)) {
-        array_push($mats, $materia);
-        //$listar = "ou <a class=\"orange_link\" href=\"javascript:void(0)\" onclick=\"showMat('$materia')\">listar aqui</a>";
-        $links .= "<br><big><big><a href=\"materia/$materia\">[$materia]</b></a></big></big><br>";
-    }
-    if ($curr <= $lim)  {
-        $likes = substr_count($arquivo[2], ";") - 1;
-        $s = $likes == 1 ? "" : "s";
-        $final .= "<span><a target=\"_blank\" href=\"resumo/$bas\">$assunto</a>, por $autoria, com $likes like$s<br><br></span>";
-    }
-    $curr++;
+    $links .= "<a target=\"_blank\" href=\"../resumo/$bas\">$assunto</a><br><br>";
+    $tot++;
+    if ($tot == $max) break;
 }
 
-if ($final == "")
-    $final = "Nenhum resumo disponível agora...";
-
-$fi = new FilesystemIterator($pasta, FilesystemIterator::SKIP_DOTS);
-
 ?>
-
 <html>
     <head>
         <title>Resumos</title>
@@ -71,22 +53,14 @@ $fi = new FilesystemIterator($pasta, FilesystemIterator::SKIP_DOTS);
             <br>
             <a class="ajude" target="_blank" href="ajude.php">Faça um resumo e ajude um amigo!</a><br>
             <br>
-            <?php echo "Temos " . iterator_count($fi) . " resumos e contando!"; ?><br>
             <br>
-            <a href="recentes.php">Resumos mais recentes</a><br>
+            <a href=".">[Voltar à página inicial]</a><br>
             <br>
             <br>
-            <b>Resumos por matéria:</b><br>
-            <?php echo $links; ?><br>
+            <big><big>
+            <span id="msg">Resumos mais recentes:</span><br>
             <br>
-            <hr><br>
-            <span id="msg"><b>Resumos com mais likes:</b></span><br>
-            <br>
-            <div id="resumos">
-                <?php echo $final; ?>
-            </div>
-            <br>
+            <?php echo $links; ?></big></big>
         </center>
-        <script src="index.js"></script>
     </body>
 </html>
