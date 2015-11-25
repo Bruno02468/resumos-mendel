@@ -1,13 +1,6 @@
-html {
-    display: table;
-    margin: auto;
-}
-
 body {
     background-color: #10110E;
     overflow-x: hidden;
-    width: auto;
-    display: table-cell;
 }
 
 :not(span) {
