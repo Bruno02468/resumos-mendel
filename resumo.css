@@ -10,7 +10,6 @@ body {
 
 .colored * {
     color: inherit;
-    font-family: inherit;
 }
 
 code, .mono, .editor {
