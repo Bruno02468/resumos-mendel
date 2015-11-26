@@ -40,10 +40,13 @@ $conteudo = formatar(implode("", $arquivo));
         <?php include("analytics.php"); ?>
         <center>
             <h1>Site dos Resumos</h1>
-            <a href="..">[Voltar à página inicial]</a><br>
+            <a href="..">Página inicial</a><br>
+            <br>
+            <a href="../materia/<?php echo $materia; ?>">Mais resumos de <?php echo $materia; ?></a><br>
+            <br>
             <small>
-                <a href="../ademir/edita.php?f=<?php echo $file; ?>">[Editar resumo]</a><br>
                 Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (1º E)<br>
+                <small><a href="../ademir/edita.php?f=<?php echo $file; ?>">[Editar resumo]</a></small><br>
             </small><br>
         </center>
         <br>
