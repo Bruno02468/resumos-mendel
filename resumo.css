@@ -8,6 +8,11 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.colored * {
+    color: inherit;
+    font-family: inherit;
+}
+
 code, .mono, .editor {
     font-family: monospace; !important
 }

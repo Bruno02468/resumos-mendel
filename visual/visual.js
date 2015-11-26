@@ -35,7 +35,7 @@ function preview() {
     var hcreg = /\[\/big\]/gi;
     var hcrep = "</div>";
     var colorreg = /\[cor:([^\]]+)\]/gi;
-    var colorrep = "<span style=\"color: $1;\">";
+    var colorrep = "<span class=\"colored\" style=\"color: $1;\">";
     var endcolorreg = /\[\/cor\]/gi;
     var endcolorrep = "</span>";
     var fourreg = /    /gi;

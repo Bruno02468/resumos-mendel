@@ -52,7 +52,7 @@ function formatar($texto) {
     $hcreg = "/\[\/big\]/";
     $hcrep = "</div>";
     $colorreg = "/\[cor:($not_bracket+)\]/";
-    $colorrep = "<span style=\"color: $1;\">";
+    $colorrep = "<span class=\"colored\" style=\"color: $1;\">";
     $endcolorreg = "/\[\/cor\]/";
     $endcolorrep = "</span>";
     $fourreg = "/    /";
