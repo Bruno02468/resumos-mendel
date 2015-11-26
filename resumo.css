@@ -12,7 +12,7 @@ body {
     color: inherit;
 }
 
-code, .mono, .editor {
+code, .mono, .editor, code * {
     font-family: monospace; !important
 }
 
