@@ -45,7 +45,7 @@ $conteudo = formatar(implode("", $arquivo));
             <a href="../materia/<?php echo $materia; ?>">Mais resumos de <?php echo $materia; ?></a><br>
             <br>
             <small>
-                Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (1º E)<br>
+                Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (2º F)<br>
                 <small><a href="../ademir/edita.php?f=<?php echo $file; ?>">[Editar resumo]</a></small><br>
             </small><br>
         </center>
@@ -66,7 +66,7 @@ $conteudo = formatar(implode("", $arquivo));
         <br>
         <br>
         <footer>
-            <small>Tudo programado por Bruno Borges Paschoalinoto (1º E).<br>
+            <small>Tudo programado por Bruno Borges Paschoalinoto (2º F).<br>
             O conteúdo aqui foi criado por um monte de pessoas. :D</small>
         </footer>
         <script>

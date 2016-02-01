@@ -8,4 +8,4 @@ Com conteúdo escrito por várias pessoas, é muito acessado em época (= véspe
 
 A versão de produção do Site de Resumos roda aqui: http://licoes.com/resumos
 
-Programado por Bruno Borges Paschoalinoto (1º E).
+Programado por Bruno Borges Paschoalinoto (2º F).
