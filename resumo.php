@@ -42,6 +42,8 @@ $conteudo = formatar(implode("", $arquivo));
             <h1>Site dos Resumos</h1>
             <a href="..">Página inicial</a><br>
             <br>
+            <a href="//licoes.com/licao">[Site de Lições]</a><br>
+            <br>
             <a href="../materia/<?php echo $materia; ?>">Mais resumos de <?php echo $materia; ?></a><br>
             <br>
             <small>

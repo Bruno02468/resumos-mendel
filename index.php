@@ -68,7 +68,7 @@ $fi = new FilesystemIterator($pasta, FilesystemIterator::SKIP_DOTS);
             </small>
             <br>
             <br>
-            <a href="//licoes.com/licoes">[Site de Lições]</a><br>
+            <a href="//licoes.com/licao">[Site de Lições]</a><br>
             <br>
             <br>
             <a class="ajude" target="_blank" href="ajude.php">Faça um resumo e ajude um amigo!</a><br>
