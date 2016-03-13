@@ -54,7 +54,6 @@ if ($final == "") {
             <div class="big">
                 <?php echo "<a href=\"../ano/$ano\">[Resumos do ${ano}º]</a>"; ?><br>
                 <br>
-                <br>
                 <span id="msg">Resumos de <?php echo $mat; ?>:</span><br>
                 <br>
                 <?php echo $final; ?>
