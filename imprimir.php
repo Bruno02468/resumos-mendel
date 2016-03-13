@@ -1,26 +1,30 @@
 <?php
 
-include("funcs.php");
+include("outros/banco.php");
 
-$pasta = "dados/";
+$mini = "";
+if (isset($_GET["mini"])) {
+    $mini = $_GET["mini"];
+} else {
+    redir("..");
+}
 
-$file = trim(req_get("f"));
+$resumos = getFullJSON();
+$resumo = null;
+foreach ($resumos as $found) {
+    if ($found["mini"] == $mini) {
+        $resumo = $found;
+        break;
+    }
+}
+if (is_null($resumo)) redir("..");
 
-if ($file == "" || !file_exists($pasta . $file))
-    redir("./");
-
-$arquivo = file($pasta . $file);
-
-$first = explode(":", trim($arquivo[0]), 2);
-$materia = $first[0];
-$assunto = $first[1];
-$autoria = formatar(trim($arquivo[1]));
-$likes = substr_count($arquivo[2], ";") - 1;
-unset($arquivo[0]);
-unset($arquivo[1]);
-unset($arquivo[2]);
-
-$conteudo = formatar(implode("", $arquivo));
+$materia = $resumo["materia"];
+$autoria = $resumo["autor"];
+$assunto = $resumo["assunto"];
+$conteudo = substituir_global("/color\:/", "c_o_l_o_r:", formatar($resumo["conteudo"]));
+$ano = $resumo["ano"];
+$guid = $resumo["guid"];
 
 ?>
 
@@ -29,11 +33,11 @@ $conteudo = formatar(implode("", $arquivo));
         <title>Imprimir Resumo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
-            <?php echo file_get_contents("resumo.css"); ?>
+            <?php echo file_get_contents("outros/resumos.css"); ?>
             body {
                 background-color: white;
             }
-            .conteudo, .conteudo *, h1 {
+            .conteudo, .conteudo *, h1, * {
                 color: black; !important
             }
         </style>
@@ -43,7 +47,7 @@ $conteudo = formatar(implode("", $arquivo));
     </head>
 
     <body>
-        <?php include("analytics.php"); ?>
+        <?php include("outros/analytics.php"); ?>
         <center>
             <h1><?php echo "$materia: $assunto"; ?></h1>
         </center>
@@ -54,7 +58,7 @@ $conteudo = formatar(implode("", $arquivo));
         <br>
         <script>
             filename = "<?php echo $file; ?>";
-            <?php echo file_get_contents("resumo.js"); ?>
+            <?php echo file_get_contents("outros/resumo.js"); ?>
         </script>
     </body>
 </html>

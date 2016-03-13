@@ -1,23 +1,27 @@
 <?php
 
-include("../funcs.php");
+include("../outros/banco.php");
 
-$pasta = "../dados/";
-$file = req_get("f");
-$arquivo = file($pasta . $file);
+require_login();
 
-if (!$arquivo)
-    die("Arquivo não encontrado. Esse link deve estar quebrado. Volte ao <a href='/resumos/ademir'>painel administrativo</a>.");
+$guid = req_get("guid");
 
-$first = explode(":", trim($arquivo[0]), 2);
-$materia = htmlspecialchars(trim($first[0]));
-$assunto = htmlspecialchars(trim($first[1]));
-$autoria = htmlspecialchars(trim($arquivo[1]));
-$dadosarr = $arquivo;
-unset($dadosarr[0]);
-unset($dadosarr[1]);
-unset($dadosarr[2]);
-$conteudo = htmlspecialchars(implode("", $dadosarr));
+$resumos = getFullJSON();
+$resumo = null;
+foreach ($resumos as $found) {
+    if ($found["guid"] == $guid) {
+        $resumo = $found;
+        break;
+    }
+}
+if (is_null($resumo)) redir("..");
+
+$materia = $resumo["materia"];
+$autoria = $resumo["autor"];
+$mini= $resumo["mini"];
+$assunto = $resumo["assunto"];
+$conteudo = $resumo["conteudo"];
+$ano = $resumo["ano"];
 
 ?>
 
@@ -32,14 +36,17 @@ $conteudo = htmlspecialchars(implode("", $dadosarr));
 
     <body>
         <center>
-        <h1>Site dos Resumos - Editando resumo "<?php echo trim($arquivo[0]); ?>"</h1>
+        <h1>Editando resumo</h1>
+        <a href="atuadores/deleta.php?guid=<?php echo $guid; ?>">Deletar este resumo</a><br>
         <br>
-        <form action="atuadores/edita.php" method="POST">
-            <input type="hidden" value="<?php echo $file; ?>" name="filename">
+        <form action="atuadores/edita.php" method="POST" class="resform">
+            <input type="hidden" value="<?php echo $guid; ?>" name="guid">
             <table align="center">
+                <tr><td>Ano: </td><td><input type="text" value="<?php echo $ano; ?>" name="ano"></tr>
                 <tr><td>Matéria: </td><td><input type="text" value="<?php echo $materia; ?>" name="materia"></tr>
                 <tr><td>Assunto: </td><td><input type="text" value="<?php echo $assunto; ?>" name="assunto"></tr>
                 <tr><td>Autoria: </td><td><input type="text" value="<?php echo $autoria; ?>" name="autoria"></tr>
+                <tr><td>Endereço: </td><td><input type="text" value="<?php echo $mini; ?>" name="mini"></tr>
                 <tr><td>Corpo do texto: </td><td><textarea rows="50" cols="75" name="dados"><?php echo $conteudo; ?></textarea></tr>
             </table>
             <input type="submit" value="Salvar resumo!">

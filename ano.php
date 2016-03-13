@@ -2,33 +2,39 @@
 
 include("outros/banco.php");
 
-$mat = "";
 $ano = "";
-if (isset($_GET["mat"]) && isset($_GET["ano"])) {
-    $mat = $_GET["mat"];
+if (isset($_GET["ano"])) {
     $ano = $_GET["ano"];
 } else {
     redir("..");
 }
-
-$resumos = getFullJSON();
-$final = "";
-foreach ($resumos as $resumo) {
-    if ($resumo["materia"] !== $mat || $resumo["ano"] !== $ano) continue;
-    $assunto = $resumo["assunto"];
-    $mini = $resumo["mini"];
-    $final .= "<a href=\"../resumo/$mini\">$assunto</a><br><br>";
-}
-
-if ($final == "") {
+if (!anoExists($ano)) {
     redir("..");
 }
 
+$resumos = getFullJSON();
+$total = 0;
+$materias = array();
+foreach ($resumos as $index => $resumo) {
+    if ($resumo["ano"] !== $ano) continue;
+    $total++;
+    $materia = $resumo["materia"];
+    if (!isset($materias[$materia])) {
+        $materias[$materia] = 0;
+    }
+    $materias[$materia]++;
+}
+
+$final = "";
+foreach($materias as $materia => $quantos) {
+    $final .= "<a href=\"../materia/$materia-$ano\">$materia</a><br><br>";
+}
 
 ?>
+
 <html>
     <head>
-        <title>Resumos de <?php echo $mat; ?></title>
+        <title>Resumos do <?php echo $ano; ?>º</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="../outros/resumos.css">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -39,7 +45,7 @@ if ($final == "") {
     <body>
         <?php include("outros/analytics.php"); ?>
         <center>
-            <h1>Site dos Resumos</h1>
+            <h1>Resumos do <?php echo $ano; ?>º Ano</h1>
             <small>
                 Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (2º F)<br>
                 <br>
@@ -47,18 +53,14 @@ if ($final == "") {
             </small>
             <br>
             <br>
-            <br>
-            <a class="ajude" target="_blank" href="ajude.php">Faça um resumo e ajude um amigo!</a><br>
-            <br>
-            <br>
             <div class="big">
-                <?php echo "<a href=\"../ano/$ano\">[Resumos do ${ano}º]</a>"; ?><br>
+                <a href="..">[Outros anos]</a><br>
                 <br>
+                <?php echo "Contamos com $total resumos para o ${ano}º ano:"; ?><br>
                 <br>
-                <span id="msg">Resumos de <?php echo $mat; ?>:</span><br>
+                <?php echo $final ?>
                 <br>
-                <?php echo $final; ?>
-        </div>
+            </div>
         </center>
     </body>
 </html>

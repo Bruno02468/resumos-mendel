@@ -2,7 +2,7 @@
     <head>
         <title>Faça um resumo!</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="resumo.css">
+        <link rel="stylesheet" type="text/css" href="outros/resumos.css">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
     </head>

@@ -45,7 +45,7 @@ foreach ($arquivos as $file) {
         <center>
             <h1>Site dos Resumos</h1>
             <small>
-                Tudo programado por <a target="_blank" href="/licao/contato.html">Bruno Borges Paschoalinoto</a> (2º F)<br>
+                Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (2º F)<br>
                 <small><a href="ademir/">[Somente pessoal autorizado]</a></small>
             </small>
             <br>

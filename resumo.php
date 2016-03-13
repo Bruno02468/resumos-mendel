@@ -1,26 +1,30 @@
 <?php
 
-include("funcs.php");
+include("outros/banco.php");
 
-$pasta = "dados/";
+$mini = "";
+if (isset($_GET["mini"])) {
+    $mini = $_GET["mini"];
+} else {
+    redir("..");
+}
 
-$file = trim(req_get("f"));
+$resumos = getFullJSON();
+$resumo = null;
+foreach ($resumos as $found) {
+    if ($found["mini"] == $mini) {
+        $resumo = $found;
+        break;
+    }
+}
+if (is_null($resumo)) redir("..");
 
-if ($file == "" || !file_exists($pasta . $file))
-    redir("./");
-
-$arquivo = file($pasta . $file);
-
-$first = explode(":", trim($arquivo[0]), 2);
-$materia = $first[0];
-$assunto = $first[1];
-$autoria = formatar(trim($arquivo[1]));
-$likes = substr_count($arquivo[2], ";") - 1;
-unset($arquivo[0]);
-unset($arquivo[1]);
-unset($arquivo[2]);
-
-$conteudo = formatar(implode("", $arquivo));
+$materia = $resumo["materia"];
+$autoria = $resumo["autor"];
+$assunto = $resumo["assunto"];
+$conteudo = formatar($resumo["conteudo"]);
+$ano = $resumo["ano"];
+$guid = $resumo["guid"];
 
 ?>
 
@@ -29,7 +33,7 @@ $conteudo = formatar(implode("", $arquivo));
         <title><?php echo $assunto; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
-            <?php echo file_get_contents("resumo.css"); ?>
+            <?php echo file_get_contents("outros/resumos.css"); ?>
         </style>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -37,18 +41,19 @@ $conteudo = formatar(implode("", $arquivo));
     </head>
 
     <body>
-        <?php include("analytics.php"); ?>
+        <?php include("outros/analytics.php"); ?>
         <center>
             <h1>Site dos Resumos</h1>
             <a href="..">Página inicial</a><br>
             <br>
             <a href="//licoes.com/licao">[Site de Lições]</a><br>
             <br>
-            <a href="../materia/<?php echo $materia; ?>">Mais resumos de <?php echo $materia; ?></a><br>
+            <?php echo "<a href=\"../materia/$materia-$ano\">Outros resumos de $materia</a><br>"; ?>
             <br>
             <small>
                 Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (2º F)<br>
-                <small><a href="../ademir/edita.php?f=<?php echo $file; ?>">[Editar resumo]</a></small><br>
+                <br>
+                <a href="../ademir/editar_resumo.php?guid=<?php echo $guid; ?>">[Editar resumo]</a><br>
             </small><br>
         </center>
         <br>
@@ -58,22 +63,10 @@ $conteudo = formatar(implode("", $arquivo));
             <tr><td class="right">Escrito por: </td><td><b><?php echo $autoria; ?></b></tr>
         </table>
         <h3 style="font-weight: normal;">
-            <small><a target="_blank" href="../imprimir.php?f=<?php echo $file; ?>">Versão para imprimir</a></small><br>
+            <small><a target="_blank" href="../imprimir/<?php echo $mini; ?>">Versão para imprimir</a></small><br>
             <br>
-            <a href="javascript:void(0);" onclick="gostei();">Gostei desse resumo!</a> [<span id="likes"><?php echo $likes; ?></span>]<br>
         </h3>
-        <br>
         <div class="conteudo"><?php echo $conteudo; ?></div>
         <br>
-        <br>
-        <br>
-        <footer>
-            <small>Tudo programado por Bruno Borges Paschoalinoto (2º F).<br>
-            O conteúdo aqui foi criado por um monte de pessoas. :D</small>
-        </footer>
-        <script>
-            filename = "<?php echo $file; ?>";
-            <?php echo file_get_contents("resumo.js"); ?>
-        </script>
     </body>
 </html>

@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Somente autores de resumos!"
-AuthUserFile "/etc/htpasswd/.htpasswd_resumeiro"
-Require valid-user

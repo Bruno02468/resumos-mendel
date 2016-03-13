@@ -1,35 +1,22 @@
 <?php
 
-include("../../funcs.php");
+include("../../outros/banco.php");
 
-$pasta = "../../dados/";
+require_login();
 
-function filename($length = 10) {
-    $pasta = "../../dados/";
-    $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    $charactersLength = strlen($characters);
-    $randomString = "";
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    if (!file_exists($pasta . $randomString))
-        return $randomString;
-    else
-        return filename();
-}
-
-$filename = trim(req_post("fname"));
-
-if ($filename == "" or !validar_nome($filename) or file_exists($pasta . $filename))
-    $filename = filename();
-
-$titulo = req_post("materia") . ": " . req_post('titulo');
+$ano = req_post("ano");
+$materia = req_post("materia");
+$assunto = req_post("assunto");
 $autoria = req_post("autoria");
 $dados = req_post("dados");
+$mini = req_post("mini");
+if (!validar_nome($mini)) die("<br>Só são permitidos números, letras, - e _.");
+foreach (getFullJSON() as $resumo) {
+    if ($resumo["mini"] === $mini) die("<br>Um resumo com essa URL já existe!");
+}
 
-$arquivo = "$titulo\n$autoria\n;\n$dados";
-file_put_contents($pasta . $filename, $arquivo);
+addResumo($ano, $materia, $assunto, $autoria, $dados, $mini);
 
-redir("../../resumo/$filename");
+redir("../../resumo/$mini");
 
 ?>

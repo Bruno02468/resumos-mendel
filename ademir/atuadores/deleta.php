@@ -1,11 +1,12 @@
 <?php
 
-include("../../funcs.php");
+include("../../outros/banco.php");
 
-$filename = req_get('f');
+require_login();
 
-$arquivo = "../../dados/$filename";
-unlink($arquivo);
+$guid = req_get("guid");
+
+removeResumo($guid);
 
 redir("../");
 

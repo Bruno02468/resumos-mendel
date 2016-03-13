@@ -2,12 +2,22 @@
 
 include("../outros/banco.php");
 
-require_login();
+require_login("borginhos");
+
+$credenciais = getCredenciais();
+
+$editlinks = "";
+foreach ($credenciais as $credencial) {
+    $user = $credencial["nome"];
+    $editlinks .= "<a href=\"editar.php?nome=$user\">$user</a>
+     <a href=\"atuadores/deleta.php?nome=$user\">[deletar]</a><br><br>";
+}
 
 ?>
+
 <html>
     <head>
-        <title>Painel Administrativo</title>
+        <title>Painel Superadministrativo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="../outros/resumos.css">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -16,17 +26,16 @@ require_login();
 
     <body>
         <center>
-            <h1>Painel Administrativo</h1>
+            <h1>Painel Superadministrativo</h1>
             <br>
             <div class="big">
                 <a href="..">[Página inicial]</a><br>
                 <br>
-                <a href="criar_resumo.php">[Criar um resumo]</a><br>
+                <a href="criar.php">[Criar um login]</a><br>
                 <br>
-                <a target="_blank" href="estilo.html">[Manual de Estilo]</a><br>
+                Editar um login:<br>
                 <br>
-                <a target="_blank" href="../visual/">[Editor Visual]</a>
-                <br>(novo!)
+                <?php echo $editlinks; ?>
             </div>
         </center>
     </body>
