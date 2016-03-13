@@ -46,8 +46,6 @@ $guid = $resumo["guid"];
             <h1>Site dos Resumos</h1>
             <a href="..">Página inicial</a><br>
             <br>
-            <a href="//licoes.com/licao">[Site de Lições]</a><br>
-            <br>
             <?php echo "<a href=\"../materia/$materia-$ano\">Outros resumos de $materia</a><br>"; ?>
             <br>
             <small>
