@@ -54,11 +54,5 @@ $guid = $resumo["guid"];
         <br>
         <div class="conteudo"><?php echo $conteudo; ?></div>
         <br>
-        <br>
-        <br>
-        <script>
-            filename = "<?php echo $file; ?>";
-            <?php echo file_get_contents("outros/resumo.js"); ?>
-        </script>
     </body>
 </html>
