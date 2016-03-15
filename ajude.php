@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <?php include("analytics.php"); ?>
+        <?php include("outros/analytics.php"); ?>
         <center>
             <h1>Site dos Resumos</h1>
             <br><big>
