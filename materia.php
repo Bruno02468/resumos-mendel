@@ -17,7 +17,7 @@ foreach ($resumos as $resumo) {
     if ($resumo["materia"] !== $mat || $resumo["ano"] !== $ano) continue;
     $assunto = $resumo["assunto"];
     $mini = $resumo["mini"];
-    $final .= "<a href=\"../resumo/$mini\">$assunto</a><br><br>";
+    $final .= "<a class=\"buttonlink bigbtn\" href=\"../resumo/$mini\">$assunto</a><br><br>";
 }
 
 if ($final == "") {
@@ -43,16 +43,14 @@ if ($final == "") {
             <small>
                 Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (2º F)<br>
                 <br>
-                <a href="../ademir/">[Somente pessoal autorizado]</a>
+                <br>
+                <a class="buttonlink btnblue smallbtn" href="../ademir/">Área dos autores de resumos</a>
             </small>
             <br>
             <br>
             <br>
-            <a class="ajude" target="_blank" href="ajude.php">Faça um resumo e ajude um amigo!</a><br>
-            <br>
-            <br>
             <div class="big">
-                <?php echo "<a href=\"../ano/$ano\">[Resumos do ${ano}º]</a>"; ?><br>
+                <?php echo "<a class=\"buttonlink btnorange bigbtn\" href=\"../ano/$ano\">Outras matérias do ${ano}º</a>"; ?><br>
                 <br>
                 <span id="msg">Resumos de <?php echo $mat; ?>:</span><br>
                 <br>

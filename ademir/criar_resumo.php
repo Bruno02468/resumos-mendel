@@ -18,18 +18,16 @@ require_login();
         <center>
             <h1>Criar um resumo</h1>
             <br>
-            Não se esqueça de seguir o <a target="_blank" href="estilo.html">Manual de Estilo</a>!<br>
-            <br>
             <form action="atuadores/cria.php" method="POST">
                 <table align="center">
-                    <tr><td>Ano: </td><td><input type="text" name="ano"></tr>
+                    <tr><td>Ano (1, 2 ou 3): </td><td><input type="text" name="ano"></tr>
                     <tr><td>Matéria: </td><td><input type="text" name="materia"></tr>
-                    <tr><td>Assunto: </td><td><input type="text" name="assunto"></tr>
-                    <tr><td>Endereço: </td><td><input type="text" id="n" name="mini" onchange="validateMini(this)" value=""><span id="m"></span></tr>
-                    <tr><td>Autoria: </td><td><input type="text" name="autoria"></tr>
-                    <tr><td>Código do texto: </td><td><textarea rows="50" cols="75" name="dados"></textarea></tr>
+                    <tr><td>Assunto/tópico: </td><td><input type="text" name="assunto"></tr>
+                    <tr><td>Endereço: </td><td><small>http://licoes.com/resumos/resumo/</small><input type="text" id="n" name="mini" onchange="validateMini(this)" value=""><span id="m"></span></tr>
+                    <tr><td>Autoria (quem ESCREVEU o resumo): </td><td><input type="text" name="autoria"></tr>
+                    <tr><td>Código do texto (pode ser criado no <a target="_blank" href="../visual/">editor visual™</a>): </td><td><textarea rows="50" cols="75" name="dados"></textarea></tr>
                 </table>
-                <input type="submit" value="Criar resumo!">
+                <input class="buttonlink bigbtn" type="submit" value="Criar resumo!">
             </form>
         </center>
         <script>

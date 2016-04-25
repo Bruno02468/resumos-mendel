@@ -27,7 +27,7 @@ foreach ($resumos as $index => $resumo) {
 
 $final = "";
 foreach($materias as $materia => $quantos) {
-    $final .= "<a href=\"../materia/$materia-$ano\">$materia</a><br><br>";
+    $final .= "<a class=\"buttonlink bigbtn\" href=\"../materia/$materia-$ano\">$materia</a><br><br>";
 }
 
 ?>
@@ -49,12 +49,13 @@ foreach($materias as $materia => $quantos) {
             <small>
                 Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (2º F)<br>
                 <br>
-                <a href="../ademir/">[Somente pessoal autorizado]</a>
+                <a class="buttonlink btnblue smallbtn" href="../ademir/">Área dos autores de resumos</a>
             </small>
             <br>
             <br>
+            <br>
             <div class="big">
-                <a href="..">[Outros anos]</a><br>
+                <a class="buttonlink btnorange bigbtn" href="..">Voltar para a lista de anos</a><br>
                 <br>
                 <?php echo "Contamos com $total resumos para o ${ano}º ano:"; ?><br>
                 <br>

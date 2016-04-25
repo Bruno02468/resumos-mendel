@@ -25,11 +25,11 @@ hr {
 }
 
 a {
-    color: #5FFF57 !important;
+    color: #5FFF57;
 }
 
 a:hover {
-    color: #3DFF33 !important;
+    color: #3DFF33;
 }
 
 span {
@@ -138,8 +138,6 @@ sup, sub {
     font-size: 0.7em;
 }
 
-
-
 b, i, u {
     color: inherit;
 }
@@ -153,7 +151,7 @@ b, i, u {
     border-collapse: separate;
     border-spacing: 0;
     border-radius: 8px;
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .restable td, .restable th {
@@ -190,4 +188,63 @@ b, i, u {
 .orange_link:hover {
     color: orange !important;
     font-weight: bold;
+}
+
+.buttonlink {
+    background: #00ed4f;
+    background-image: linear-gradient(to bottom, #00ed4f, #00a806);
+    border-radius: 50px;
+    color: black;
+    font-size: 15px;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    border-bottom: 10px;
+    line-height: 20px;
+}
+
+.buttonlink:hover {
+    background: #00ff51;
+    background-image: linear-gradient(to bottom, #00ff51, #0fb300);
+    text-decoration: none;
+    color: black;
+}
+
+.btnred {
+    background: #e80000;
+    background-image: linear-gradient(to bottom, #e80000, #940000);
+}
+
+.btnred:hover {
+    background: #ff0000;
+    background-image: linear-gradient(to bottom, #ff0000, #b00000);
+}
+
+.btnblue, .admvisao .buttonlink {
+    background: #00bceb;
+    background-image: linear-gradient(to bottom, #00bceb, #00799e);
+}
+
+.btnblue:hover, .admvisao .buttonlink:hover {
+    background: #00d0eb;
+    background-image: linear-gradient(to bottom, #00d0eb, #008da6);
+}
+
+.btnorange {
+    background: #ff8c12;
+    background-image: linear-gradient(to bottom, #ff8c12, #f76b00);
+}
+
+.btnorange:hover {
+    background: #ffa200;
+    background-image: linear-gradient(to bottom, #ffa200, #ff7700);
+}
+
+.smallbtn {
+    padding: 2px 8px 2px 8px;
+}
+
+.bigbtn {
+    font-size: 20px;
+    padding: 6px 15px 6px 15px;
+    line-height: 25px;
 }

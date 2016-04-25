@@ -15,7 +15,7 @@ foreach ($resumos as $resumo) {
 
 $final = "";
 foreach ($anos as $ano => $quantos) {
-    $final .= "<a href=\"ano/$ano\" class=\"anolink\">Resumos do ${ano}º ano ($quantos)</a><br><br>";
+    $final .= "<a href=\"ano/$ano\" class=\"buttonlink bigbtn\">Resumos do ${ano}º ano ($quantos)</a><br><br>";
 }
 
 if ($final == "")
@@ -40,8 +40,9 @@ if ($final == "")
             <small>
                 Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (2º F)<br>
                 <br>
-                <a href="ademir/">[Somente pessoal autorizado]</a><br>
-                <br><small><a href="superademir/">[Somente pessoal MUITO autorizado]</a></small>
+                <br>
+                <a class="buttonlink btnblue smallbtn" href="ademir/">Área dos autores de resumos</a><br>
+                <br><small><a class="buttonlink btnblue smallbtn" href="superademir/">Superadministração</a></small>
             </small>
             <br>
             <br>
@@ -50,9 +51,9 @@ if ($final == "")
             <br>
             <br>
             <div class="big">
-                <a href="//licoes.com/licao">[Site de Lições]</a><br>
+                <a class="buttonlink btnorange bigbtn" href="//licoes.com/licao">Lições</a><br>
                 <br>
-                <?php echo "Temos $total resumos e contando!"; ?><br>
+                <?php echo "Temos <u>$total</u> resumos e contando!"; ?><br>
                 <br>
                 Resumos por ano:<br>
                 <br>

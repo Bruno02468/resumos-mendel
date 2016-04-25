@@ -44,16 +44,16 @@ $guid = $resumo["guid"];
         <?php include("outros/analytics.php"); ?>
         <center>
             <h1>Site dos Resumos</h1>
-            <a href="..">Página inicial</a><br>
+            <a class="buttonlink btnorange" href="..">Página inicial</a><br>
             <br>
-            <?php echo "<a href=\"../ano/$ano\">Outros resumos do ${ano}º</a>"; ?><br>
+            <?php echo "<a class=\"buttonlink btnorange\" href=\"../ano/$ano\">Outras matérias do ${ano}º</a>"; ?><br>
             <br>
-            <?php echo "<a href=\"../materia/$materia-$ano\">Outros resumos de $materia</a>"; ?><br>
+            <?php echo "<a class=\"buttonlink btnorange\" href=\"../materia/$materia-$ano\">Outros resumos de $materia</a>"; ?><br>
             <br>
             <small>
-                Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (2º F)<br>
+                <a class="buttonlink btnblue smallbtn" href="../ademir/editar_resumo.php?guid=<?php echo $guid; ?>">Editar este resumo</a><br>
                 <br>
-                <a href="../ademir/editar_resumo.php?guid=<?php echo $guid; ?>">[Editar resumo]</a><br>
+                Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (2º F)<br>
             </small><br>
         </center>
         <br>
@@ -63,7 +63,7 @@ $guid = $resumo["guid"];
             <tr><td class="right">Escrito por: </td><td><b><?php echo $autoria; ?></b></tr>
         </table>
         <h3 style="font-weight: normal;">
-            <small><a target="_blank" href="../imprimir/<?php echo $mini; ?>">Versão para imprimir</a></small><br>
+            <small>&nbsp;&nbsp;&nbsp;&nbsp;<a class="buttonlink smallbtn" target="_blank" href="../imprimir/<?php echo $mini; ?>">Versão para imprimir</a></small><br>
             <br>
         </h3>
         <div class="conteudo"><?php echo $conteudo; ?></div>

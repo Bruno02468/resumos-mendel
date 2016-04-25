@@ -7,7 +7,7 @@ require_login();
 ?>
 <html>
     <head>
-        <title>Painel Administrativo</title>
+        <title>Área restrita</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="../outros/resumos.css">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -16,17 +16,14 @@ require_login();
 
     <body>
         <center>
-            <h1>Painel Administrativo</h1>
+            <h1>Área dos autores de resumos</h1>
             <br>
             <div class="big">
-                <a href="..">[Página inicial]</a><br>
+                <a class="buttonlink btnorange bigbtn" href="..">Página inicial</a><br>
                 <br>
-                <a href="criar_resumo.php">[Criar um resumo]</a><br>
+                <a class="buttonlink bigbtn" href="criar_resumo.php">Criar um resumo</a><br>
                 <br>
-                <a target="_blank" href="estilo.html">[Manual de Estilo]</a><br>
-                <br>
-                <a target="_blank" href="../visual/">[Editor Visual]</a>
-                <br>(novo!)
+                <a class="buttonlink bigbtn" target="_blank" href="../visual/">Editor Visual<sub style="color: black">BETA</sub></a>
             </div>
         </center>
     </body>
