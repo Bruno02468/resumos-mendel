@@ -1,11 +1,21 @@
 .editor {
-    width: 75%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     font-size: 14px;
 }
 
+.editortd {
+    width: 50%;
+    vertical-align: text-top;
+}
+
+.outtd {
+    width: 50%;
+    vertical-align: text-top;
+}
+
 #cores {
-    font-family: sans;
+    font-family: sans-serif;
     background-color: #333;
     width: auto;
     display: table;
@@ -17,4 +27,17 @@
 
 #prev {
     border: 2px solid black;
+}
+
+.editable {
+    width: 95%;
+    table-layout: fixed;
+}
+
+.editable td {
+    padding: 7px;
+}
+
+#ferramentas {
+    text-align: center;
 }

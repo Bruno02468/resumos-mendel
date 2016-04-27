@@ -1,3 +1,7 @@
+document.body.style.height = innerHeight;
+
+document.getElementById("out").style.height = document.getElementById("editor").style.height;
+
 var inp = document.getElementById("editor");
 var out = document.getElementById("out");
 var selection = [0, 0];
