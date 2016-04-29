@@ -42,11 +42,11 @@ $ano = $resumo["ano"];
         <form action="atuadores/edita.php" method="POST" class="resform">
             <input type="hidden" value="<?php echo $guid; ?>" name="guid">
             <table align="center">
-                <tr><td>Ano (pra quê mudar?): </td><td><input type="text" value="<?php echo $ano; ?>" name="ano"></tr>
+                <tr><td>Ano (pra quê mudar?): </td><td><input type="number" min="1" max="3" value="<?php echo $ano; ?>" name="ano"></tr>
                 <tr><td>Matéria: </td><td><input type="text" value="<?php echo $materia; ?>" name="materia"></tr>
                 <tr><td>Assunto/tópico: </td><td><input type="text" value="<?php echo $assunto; ?>" name="assunto"></tr>
                 <tr><td>Autoria (quem ESCREVEU): </td><td><input type="text" value="<?php echo $autoria; ?>" name="autoria"></tr>
-                <tr><td>Endereço: </td><td><small>http://licoes.com/resumos/resumo/</small><input type="text" value="<?php echo $mini; ?>" name="mini"></tr>
+                <tr><td>Endereço: </td><td><small>http://licoes.com/resumos/resumo/</small>&nbsp;<input type="text" value="<?php echo $mini; ?>" name="mini"></tr>
                 <tr><td>Código do texto: </td><td><textarea rows="50" cols="75" name="dados"><?php echo $conteudo; ?></textarea></tr>
             </table>
             <input type="submit" value="Salvar resumo!">

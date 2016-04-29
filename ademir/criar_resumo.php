@@ -20,10 +20,10 @@ require_login();
             <br>
             <form action="atuadores/cria.php" method="POST">
                 <table align="center">
-                    <tr><td>Ano (1, 2 ou 3): </td><td><input type="text" name="ano"></tr>
+                    <tr><td>Ano: </td><td><input type="number" min="1" max="3" name="ano"></tr>
                     <tr><td>Matéria: </td><td><input type="text" name="materia"></tr>
                     <tr><td>Assunto/tópico: </td><td><input type="text" name="assunto"></tr>
-                    <tr><td>Endereço: </td><td><small>http://licoes.com/resumos/resumo/</small><input type="text" id="n" name="mini" onchange="validateMini(this)" value=""><span id="m"></span></tr>
+                    <tr><td>Endereço: </td><td><small>http://licoes.com/resumos/resumo/</small>&nbsp;<input type="text" id="n" name="mini" onchange="validateMini(this)" value=""><span id="m"></span></tr>
                     <tr><td>Autoria (quem ESCREVEU o resumo): </td><td><input type="text" name="autoria"></tr>
                     <tr><td>Código do texto (pode ser criado no <a target="_blank" href="../visual/">editor visual™</a>): </td><td><textarea rows="50" cols="75" name="dados"></textarea></tr>
                 </table>

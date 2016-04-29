@@ -57,12 +57,12 @@ $guid = $resumo["guid"];
             </small><br>
         </center>
         <br>
-         <table style="font-size: 1.17em">
+         <table style="font-size: 1.17em; margin: 0 auto;">
             <tr><td class="right">Resumo de: </td><td><b><?php echo $materia; ?></b></td></tr>
             <tr><td class="right">Assunto: </td><td><b><?php echo $assunto; ?></b></td></tr>
             <tr><td class="right">Escrito por: </td><td><b><?php echo $autoria; ?></b></tr>
         </table>
-        <h3 style="font-weight: normal;">
+        <h3 style="font-weight: normal;" align="center">
             <small>&nbsp;&nbsp;&nbsp;&nbsp;<a class="buttonlink smallbtn" target="_blank" href="../imprimir/<?php echo $mini; ?>">Versão para imprimir</a></small><br>
             <br>
         </h3>
