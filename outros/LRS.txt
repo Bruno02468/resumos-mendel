@@ -1,0 +1,149 @@
+LICENÇA DE RESUMOS DO SITE (LRS) VERSÃO 1
+
+ESCRITA POR BRUNO BORGES PASCHOALINOTO
+
+APLICA-SE À TOTALIDADE DO CONTEÚDO PRESENTE NO SITE
+
+
+0) TERMOS COMUNS
+    Site: todo o conteúdo dentro de http://licoes.com/resumos
+    Administrador: o diretor do site. No momento, Bruno Borges Paschoalinoto.
+    Colaborador: autores de resumos, imagens e outros recursos usados no Site.
+
+
+i) DIRECIONAMENTO PARA O CONTEÚDO
+
+    É totalmente permitido criar links que levem pessoas para qualquer página de
+    usuário comum do Site, desde que não haja alteração do crédito na forma da
+    descrição do link ou do contexto em que o link é apresentado.
+
+
+ii) CÓPIA SIMPLES
+
+    É expressamente probibido copiar conteúdo, seja na forma de texto ou de
+    imagens (de autoria de algum colaborador do Site), e disponibilizá-lo na
+    íntegra em outras páginas na internet ou alguma forma de documento
+    compartilhado por meios eletrônicos ou físicos.
+
+    Citações curtas são permitidas, desde que seja dado o devido crédito ao
+    autor do resumo e seja fornecido um link para o conteúdo original.
+
+    O uso de imagens de autoria do criador do resumo fica a critério do autor do
+    resumo, sendo proibido a não ser que o criador do resumo o permita.
+
+    Uso direto de imagens inclui tanto hotlinking quanto inclusão em outras
+    páginas web ou outros meios de distribuição que não o Site.
+
+
+iii) VERSÕES IMPRESSAS
+
+    Em todas as páginas de resumo há um link dando acesso a uma versão pronta
+    para impressão do resumo. Imprimir esse conteúdo é permitido para uso
+    pessoal sem nenhum tipo de fim financeiro.
+
+    Especificando, é proibido o uso comercial, seja venda, aluguel, exibição
+    controlada, entre outros, de qualquer conteúdo presente no Site.
+
+    Também são proibidas exibições em massa ou qualquer tipo de ação que faça
+    uso de versões impressas e tenha como consequência direta ou indireta
+    qualquer influência negativa nos acessos ao Site por parte dos usuários.
+
+
+iv) VERSÕES DERIVATIVAS
+
+    Criar versões alternativas ou baseadas de qualquer forma num conteúdo
+    presente no Site sem a autorização do Colaborador e do Administrador fica
+    proibido nos termos desta Licença.
+
+    Todo trabalho derivativo de qualquer conteúdo presente no Site deve citar o
+    trabalho original, o site, o autor do trabalho original, e afirmar que está
+    sob a versão mais recente desta Licença.
+
+
+v) IMAGENS DE TERCEIROS INCLUSAS EM RESUMOS
+
+    Muitas vezes, são encontradas imagens que não foram criadas por um
+    Colaborador dentro da página de um resumo.
+
+    Tais imagens, por não terem sido criadas por um Colaborador, não estão
+    sob o efeito desta Licença. Porém, o contexto em torno do qual foram usadas
+    sem violação dos direitos de seus respectivos autores só se aplica às 
+    páginas dentro do Site, ficando, portanto, à discrição da parte daquele que
+    cita (dentro dos termos desta Licença) alguma passagem de algum resumo
+    incluir ou não a(s) imagem(ns) contidas na tal passagem.
+
+    O Site, seus Colaboradores e o Administrador reservam-se o direito de não
+    extender o contexto de uso justo das imagens e recursos de terceiros a
+    páginas que estejam citando o conteúdo presente no Site.
+
+
+vi) BANCO DE DADOS E INCLUSÃO AUTOMÁTICA
+
+    O banco de dados do Site apresenta-se num formato facilmente legível e
+    publicamente disponível para qualquer um com o endereço, fácil de conseguir.
+
+    Isso, porém, não o torna público, tampouco isento dos efeitos desta Licença.
+
+    Qualquer tipo de leitura automatizada ou outro método que resulte em uma
+    inclusão automática de qualquer conteúdo do Site é expressamente proibido
+    nos termos desta Licença, estando de acordo com os anteriores ou não.
+
+
+vii) CONFIABILIDADE E RESPONSABILIDADE
+
+    O conteúdo do Site se caracteriza por conter informações específicas
+    retiradas quase que em sua totalidade de aulas e anotações de alunos.
+
+    Logo, é de se esperar que imprecisões ocorram esporadicamente. Porém, o
+    Site, seus Coladores e o Administrador não se responsabilizam por quaisquer
+    consequências negativas de alguma imprecisão presente num resumo.
+
+    O objetivo desta operação não é dar informações detalhadas com zero erros,
+    mas sim providenciar uma forma rápida de acessar as informações referentes
+    a certos conteúdos escolares, escritas pelos próprios alunos.
+
+    Assim, não faz sentido querer usar este Site como fonte em qualquer situação
+    em que haja riscos significativos de consequências negativas por alguma
+    imprecisão no conteúdo citado, logo, nenhuma das pessoas por trás do Site
+    se responsabilizará por situações e consequências desse gênero.
+
+
+viii) CÓDIGO DA CAMADA DE USUÁRIO
+
+    O código do Site é tão importante quanto sua expressão na forma de conteúdo
+    compreensível para os usuários finais.
+    
+    Por isso, é proibido nos termos desta Licença fazer alterações no código
+    que é gerado para o usuário final, seja para excluir informações como a
+    autoria do conteúdo, quanto para adicionar novas, configurando uma forma não
+    permitida de Trabalho Derivativo, cujos limites já foram definidos acima.
+
+
+ix) COPIAS VISUAIS ("PRINTS")
+
+    É expressamente proibida nos termos desta Licença a divulgação em outras
+    páginas web ou meios físicos de cominicação, de cópias visuais, capturas de
+    tela, "prints", fotos ou semelhantes, de qualquer conteúdo do Site.
+    
+    Esses tipos de cópias, mesmo quando acompanhados de link, não configuram uma
+    citação permitida nos termos desta Licença.
+
+
+x) APLICABILIDADE
+
+    Esta Licença se aplica à totalidade do conteúdo no Site.
+
+    Nenhum resumo, Colaborador, ou aviso presente em qualquer página de conteúdo
+    gerado por usuários do Site pode reverter a aplicabilidade desta Licença
+    em qualquer parte do conteúdo que seja.
+
+    Ao enviar um resumo e mantê-lo no Site, o Colaborador aceita manter seu
+    trabalho sob esta licença, e não mais mantém o direito de reverter sua
+    aplicabilidade.
+
+
+Esta Licença existe para proteger o conteúdo e os direitos autorais dos
+Colaboradores do Site, garantindo a manutenção desta operação futuramente.
+
+
+Bruno Borges Paschoalinoto, autor do código, de vários resumos, e desta Licença.

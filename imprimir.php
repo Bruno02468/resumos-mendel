@@ -50,6 +50,9 @@ $guid = $resumo["guid"];
         <?php include("outros/analytics.php"); ?>
         <center>
             <h1><?php echo "$materia: $assunto"; ?></h1>
+            <div class="conteudo">Autoria: <b><?php echo $autoria; ?></b><br>
+            Original em <b>http://licoes.com/resumos/resumo/<?php echo $mini; ?>/</b>.</div>
+            <br>
         </center>
         <br>
         <div class="conteudo"><?php echo $conteudo; ?></div>
