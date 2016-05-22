@@ -25,6 +25,7 @@ foreach ($resumos as $index => $resumo) {
     $materias[$materia]++;
 }
 
+ksort($materias);
 $final = "";
 foreach($materias as $materia => $quantos) {
     $final .= "<a class=\"buttonlink bigbtn\" href=\"../materia/$materia-$ano\">$materia</a><br><br>";

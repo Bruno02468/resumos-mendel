@@ -43,7 +43,7 @@ $guid = $resumo["guid"];
     <body>
         <?php include("outros/analytics.php"); ?>
         <center>
-            <h1>Site dos Resumos</h1>
+            <h1>Resumo de <?php echo $materia; ?></h1>
             <a class="buttonlink btnorange" href="..">Página inicial</a><br>
             <br>
             <?php echo "<a class=\"buttonlink btnorange\" href=\"../ano/$ano\">Outras matérias do ${ano}º</a>"; ?><br>
@@ -55,13 +55,13 @@ $guid = $resumo["guid"];
                 <br>
                 Tudo programado por <a target="_blank" href="http://licoes.com/licao/contato.html">Bruno Borges Paschoalinoto</a> (2º F)<br>
             </small><br>
-        </center>
         <br>
-         <table style="font-size: 1.17em; margin: 0 auto;">
-            <tr><td class="right">Resumo de: </td><td><b><?php echo $materia; ?></b></td></tr>
-            <tr><td class="right">Assunto: </td><td><b><?php echo $assunto; ?></b></td></tr>
-            <tr><td class="right">Escrito por: </td><td><b><?php echo $autoria; ?></b></tr>
-        </table>
+            <big><big>
+            <b><?php echo $assunto; ?><br>
+            <small><small><small><small><small><small><br></small></small></small></small></small></small>
+            </b>Escrito por <b><?php echo $autoria; ?></b></big></big>
+            
+        </center>
         <h3 style="font-weight: normal;" align="center">
             <small>&nbsp;&nbsp;&nbsp;&nbsp;<a class="buttonlink smallbtn" target="_blank" href="../imprimir/<?php echo $mini; ?>">Versão para imprimir</a></small><br>
             <br>
