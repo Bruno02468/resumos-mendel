@@ -111,6 +111,8 @@ button, input[type=button], input[type=submit] {
     margin: 0 auto;
     white-space: pre-wrap;
     max-width: 1080px;
+    display: table-cell;
+    text-align: left;
 }
 
 img {

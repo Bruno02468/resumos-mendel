@@ -66,7 +66,7 @@ $guid = $resumo["guid"];
             <small>&nbsp;&nbsp;&nbsp;&nbsp;<a class="buttonlink smallbtn" target="_blank" href="../imprimir/<?php echo $mini; ?>">Versão para imprimir</a></small><br>
             <br>
         </h3>
-        <div class="conteudo"><?php echo $conteudo; ?></div>
+        <center><div class="conteudo"><?php echo $conteudo; ?></div></center>
         <br>
     </body>
 </html>
