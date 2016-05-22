@@ -40,6 +40,13 @@ $guid = $resumo["guid"];
             .conteudo, .conteudo *, h1, * {
                 color: black; !important
             }
+            .restable {
+                border: 2px double black;
+            }
+            .restable td, .restable th {
+                border-top: 1px solid black;
+                border-left: 1px solid black;
+            }
         </style>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -50,12 +57,12 @@ $guid = $resumo["guid"];
         <?php include("outros/analytics.php"); ?>
         <center>
             <h1><?php echo "$materia: $assunto"; ?></h1>
-            <div class="conteudo">Autoria: <b><?php echo $autoria; ?></b><br>
+            <div style="color: black;">Autoria: <b><?php echo $autoria; ?></b><br>
             Original em <b>http://licoes.com/resumos/resumo/<?php echo $mini; ?>/</b>.</div>
             <br>
         </center>
         <br>
-        <div class="conteudo"><?php echo $conteudo; ?></div>
+        <center><div class="conteudo"><?php echo $conteudo; ?></div></center>
         <br>
     </body>
 </html>
