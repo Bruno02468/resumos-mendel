@@ -95,8 +95,8 @@ vii) CONFIABILIDADE E RESPONSABILIDADE
     retiradas quase que em sua totalidade de aulas e anotações de alunos.
 
     Logo, é de se esperar que imprecisões ocorram esporadicamente. Porém, o
-    Site, seus Coladores e o Administrador não se responsabilizam por quaisquer
-    consequências negativas de alguma imprecisão presente num resumo.
+    Site, seus Colaboradores e o Administrador não se responsabilizam por
+    quaisquer consequências negativas de alguma imprecisão presente num resumo.
 
     O objetivo desta operação não é dar informações detalhadas com zero erros,
     mas sim providenciar uma forma rápida de acessar as informações referentes
