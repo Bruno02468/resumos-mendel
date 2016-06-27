@@ -74,10 +74,5 @@ $guid = $resumo["guid"];
         </h3>
         <center><div class="conteudo"><?php echo $conteudo; ?></div></center>
         <br>
-        <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-        });
-        </script>
     </body>
 </html>
