@@ -65,6 +65,8 @@ function preview() {
 
     localStorage["dados"] = inp.value;
     out.innerHTML = texto;
+    
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 }
 
 String.prototype.insertAt = function(index, string) {
