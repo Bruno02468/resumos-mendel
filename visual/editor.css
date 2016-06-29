@@ -27,6 +27,9 @@
 
 #prev {
     border: 2px solid black;
+    font-family: monospace;
+    font-size: 85%;
+    text-align: center;
 }
 
 .editable {

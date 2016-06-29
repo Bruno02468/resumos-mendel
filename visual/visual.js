@@ -66,7 +66,7 @@ function preview() {
     localStorage["dados"] = inp.value;
     out.innerHTML = texto;
     
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    if (window.MathJax) MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 }
 
 String.prototype.insertAt = function(index, string) {
@@ -136,6 +136,8 @@ function updateColors() {
     var b = document.getElementById("b").value;
 
     prev.style.backgroundColor = (but.style.color = "rgb(" + r + ", " + g + ", " + b + ")");
+    prev.style.color = "rgb(" + (255 - r) + ", " + (255 - g) + ", " + (255 - b) + ")"
+    prev.innerHTML = "(" + r + ", " + g + ", " + b + ")";
 }
 updateColors();
 
