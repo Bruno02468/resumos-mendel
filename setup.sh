@@ -9,5 +9,6 @@ echo "Insira sua mensagem aqui">msg.txt
 echo "Setando permissões..."
 chmod 777 outros/credenciais.json
 chmod 777 outros/resumos.json
+chmod 777 msg.txt
 
 echo "Tudo pronto!"
