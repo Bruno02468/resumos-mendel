@@ -66,7 +66,7 @@ $guid = $resumo["guid"];
             <b><?php echo $assunto; ?><br>
             <small><small><small><small><small><small><br></small></small></small></small></small></small>
             </b>Escrito por <b><?php echo $autoria; ?></b></big></big>
-            
+
         </center>
         <h3 style="font-weight: normal;" align="center">
             <small>&nbsp;&nbsp;&nbsp;&nbsp;<a class="buttonlink smallbtn" target="_blank" href="../imprimir/<?php echo $mini; ?>">Versão para imprimir</a></small><br>

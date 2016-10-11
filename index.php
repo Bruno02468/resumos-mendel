@@ -51,6 +51,10 @@ if ($final == "")
             <a class="ajude" target="_blank" href="ajude.php">Faça um resumo e ajude um amigo!</a><br>
             <br>
             <br>
+            Mensagem global:<br>
+            <div class="mensagem"><?php echo formatar(file_get_contents("msg.txt")); ?></div><br>
+            <br>
+            <br>
             <div class="big">
                 <a class="buttonlink btnorange bigbtn" href="//licoes.com/licao">Lições</a><br>
                 <br>

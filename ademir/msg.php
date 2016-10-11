@@ -7,7 +7,7 @@ require_login();
 ?>
 <html>
     <head>
-        <title>Área restrita</title>
+        <title>Mensagem do site</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="../outros/resumos.css">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -16,17 +16,15 @@ require_login();
 
     <body>
         <center>
-            <h1>Área dos autores de resumos</h1>
+            <h1>Mensagem geral</h1>
             <br>
             <div class="big">
                 <a class="buttonlink btnorange bigbtn" href="..">Página inicial</a><br>
                 <br>
-                <a class="buttonlink bigbtn" href="criar_resumo.php">Criar um resumo</a><br>
-                <br>
-                <a class="buttonlink bigbtn" target="_blank" href="../visual/">Editor Visual<sub style="color: black">BETA</sub></a>
-                <br>
-                <br>
-                <a class="buttonlink bigbtn" target="_blank" href="msg.php">Mensagem global</a>
+                <form action="atuadores/seta_msg.php" method="POST">
+                    <textarea name="msg" rows="15" cols="75"><?php echo htmlspecialchars(file_get_contents("../msg.txt")); ?></textarea><br>
+                    <input class="buttonlink bigbtn" type="submit" value="Salvar!">
+                </form>
             </div>
         </center>
     </body>
